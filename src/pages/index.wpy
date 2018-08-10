@@ -24,6 +24,9 @@
       border-bottom: 1px solid #d3454f;
       margin-bottom: 10px;
     }
+    .weui-search-bar__cancel-btn{
+      color:#ffffff;
+    }
     .wx-search-input{
       text-align: left;
     }
@@ -44,10 +47,18 @@
       width: 100%;
     }
   }
+  .page__bd{
+    margin-top:-30rpx;
+    swiper{
+      box-sizing: border-box;
+      height: 512rpx;
+    }
+  }
+
 </style>
 <template>
   <view class="page">
-    <view class="container page-header">
+    <view class="container page-header page__hd">
       <view class="weui-search-bar">
         <view class="weui-search-bar__form">
           <view class="weui-search-bar__box">
@@ -92,7 +103,16 @@
       </view>
     </view>
     <view class="page__bd page__bd_spacing">
-
+      <view class="index-swiper">
+        <swiper indicator-dots="{{indicatorDots}}"
+                autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+          <block wx:for="{{imgUrls}}">
+            <swiper-item>
+              <image src="{{item}}" class="slide-image" width="355" height="150"/>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
     </view>
   </view>
 </template>
@@ -133,7 +153,16 @@
         nickName: '加载中...',
         avatarUrl: ''
       },
-      info: ''
+      info: '',
+      imgUrls: [
+        'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+      ],
+      indicatorDots: false,
+      autoplay: true,
+      interval: 5000,
+      duration: 500
     }
 
     computed = {}

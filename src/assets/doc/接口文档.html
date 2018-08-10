@@ -1,0 +1,6776 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>玩具租赁项目接口文档(PHP)</title>
+
+
+<style type="text/css">
+body {
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+  -webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+  table, pre {
+    page-break-inside: avoid;
+  }
+  pre {
+    word-wrap: break-word;
+  }
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+<style type="text/css">
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 1px solid #999;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+}
+
+	.line-numbers-rows > span {
+		pointer-events: none;
+		display: block;
+		counter-increment: linenumber;
+	}
+
+		.line-numbers-rows > span:before {
+			content: counter(linenumber);
+			color: #999;
+			display: block;
+			padding-right: 0.8em;
+			text-align: right;
+		}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">玩具租赁项目接口文档(PHP)</h1>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: center">版本号</th>
+<th style="text-align: center">修改日期</th>
+<th style="text-align: left">修改内容</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: center"><div style="width:60px;">1.0.0</div></td>
+<td style="text-align: center"><div style="width:100px;">2018.01.13</div></td>
+<td style="text-align: left">初始版本</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.1</td>
+<td style="text-align: center">2018.01.20</td>
+<td style="text-align: left">增加商品模块、文章模块、广告模块等接口</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.2</td>
+<td style="text-align: center">2018.01.22</td>
+<td style="text-align: left">增加会员模块个人资料、收货地址、等级卡、支付记录、收藏以及订单模块添加购物车、获取购物车商品、删除购物车商品等接口</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.3</td>
+<td style="text-align: center">2018.01.23</td>
+<td style="text-align: left">增加提交订单接口</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.4</td>
+<td style="text-align: center">2018.01.27</td>
+<td style="text-align: left">增加获取订单列表、获取订单详情、等级卡暂停/恢复、微信登录、微信注册等接口</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.5</td>
+<td style="text-align: center">2018.01.28</td>
+<td style="text-align: left">用户注册、微信注册接口增加用户来源字段</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.6</td>
+<td style="text-align: center">2018.01.30</td>
+<td style="text-align: left">增加获取地址区域列表接口、增加会员等级卡剩余时间自动更新功能</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.7</td>
+<td style="text-align: center">2018.02.01</td>
+<td style="text-align: left">获取购物车商品列表接口中增加待返还商品列表</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.8</td>
+<td style="text-align: center">2018.02.27</td>
+<td style="text-align: left">获取商品列表筛选中增加是否有库存选项</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.9</td>
+<td style="text-align: center">2018.02.28</td>
+<td style="text-align: left">获取商品列表筛选修改是否星标，是否推荐，是否有库存值含义</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.10</td>
+<td style="text-align: center">2018.03.03</td>
+<td style="text-align: left">获取等级卡列表、获取等级卡详情增加封面图片字段并去除token验证</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.11</td>
+<td style="text-align: center">2018.03.05</td>
+<td style="text-align: left">修改获取地址区域列表返回数据格式</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.12</td>
+<td style="text-align: center">2018.03.07</td>
+<td style="text-align: left">提交订单接口增加选中商品编号字段、增加修改收货地址接口、获取个人资料接口等级卡中增加卡状态、增加获取图片验证码接口</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.13</td>
+<td style="text-align: center">2018.03.08</td>
+<td style="text-align: left">获取收货地址列表中修改区域编号格式，增加区域名称、增加发送短信验证码接口</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.14</td>
+<td style="text-align: center">2018.03.09</td>
+<td style="text-align: left">获取个人资料接口中将等级卡由数组改为对象、增加获取用户持有等级卡列表接口</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.15</td>
+<td style="text-align: center">2018.03.10</td>
+<td style="text-align: left">获取收藏列表接口中增加年龄属性</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.16</td>
+<td style="text-align: center">2018.03.12</td>
+<td style="text-align: left">增加短信登录接口</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.17</td>
+<td style="text-align: center">2018.03.21</td>
+<td style="text-align: left">获取商品列表接口筛选编号支持逗号分隔</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.18</td>
+<td style="text-align: center">2018.03.26</td>
+<td style="text-align: left">增加商品缺货登记接口、获取商品缺货登记列表接口</td>
+</tr>
+<tr>
+<td style="text-align: center">1.0.19</td>
+<td style="text-align: center">2018.04.09</td>
+<td style="text-align: left">密码登录、短信登录接口中增加是否微信授权标识及用户编号，修改个人资料接口增加密码修改</td>
+</tr>
+<tr>
+<td style="text-align: center">1.1.0</td>
+<td style="text-align: center">2018.04.10</td>
+<td style="text-align: left">增加获取保单详情、添加保单接口</td>
+</tr>
+<tr>
+<td style="text-align: center">1.1.1</td>
+<td style="text-align: center">2018.04.12</td>
+<td style="text-align: left">增加购买等级卡接口、添加保单增加手机号属性</td>
+</tr>
+<tr>
+<td style="text-align: center">1.1.2</td>
+<td style="text-align: center">2018.04.25</td>
+<td style="text-align: left">获取订单列表接口增加订单筛选功能</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h1 id="toc_1">环境参数</h1>
+
+<ul>
+<li>URL
+
+<ul>
+<li>测试环境：<a href="http://netdisk.3vlogic.com:50081">http://netdisk.3vlogic.com:50081</a></li>
+<li>正式环境：<a href="http://toysbox-api.3vlogic.com">http://toysbox-api.3vlogic.com</a></li>
+</ul></li>
+</ul>
+
+<hr>
+
+<h1 id="toc_2">公用参数</h1>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>HEADER</li>
+</ul>
+
+<p><strong>请求参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">token</td>
+<td style="text-align: left">是(会员模块、订单模块必传)</td>
+<td style="text-align: left">string</td>
+<td>身份令牌</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /user/get_profile HTTP/1.1
+token: e405fefb4876f8f893236a39ad9ea486</code></pre></div>
+
+<hr>
+
+<h1 id="toc_3">接口列表</h1>
+
+<ul>
+<li><h3>通用模块
+
+<ul>
+<li><h5><a href="#/common/get_verifycode">获取图片验证码</a></li>
+<li><h5><a href="#/common/get_sms">发送短信验证码</a></li>
+</ul></li>
+<li><h3>会员模块
+
+<ul>
+<li><h5><a href="#/user/login">登录</a></li>
+<li><h5><a href="#/user/register">注册</a></li>
+<li><h5><a href="#/user/login_weixin">微信登录</a></li>
+<li><h5><a href="#/user/register_weixin">微信注册</a></li>
+<li><h5><a href="#/user/login_sms">短信登录</a></li>
+<li><h5><a href="#/user/get_profile">获取个人资料</a></li>
+<li><h5><a href="#/user/update_profile">修改个人资料</a></li>
+<li><h5><a href="#/user/get_own_gradecards">获取持有等级卡列表</a></li>
+<li><h5><a href="#/user/get_areas">获取地址区域列表</a></li>
+<li><h5><a href="#/user/get_addresses">获取地址列表</a></li>
+<li><h5><a href="#/user/add_address">添加收货地址</a></li>
+<li><h5><a href="#/user/edit_address">修改收货地址</a></li>
+<li><h5><a href="#/user/delete_address">删除收货地址</a></li>
+<li><h5><a href="#/user/get_gradecards">获取等级卡列表</a></li>
+<li><h5><a href="#/user/get_gradecard">获取等级卡详情</a></li>
+<li><h5><a href="#/user/handle_gradecard">等级卡暂停/恢复</a></li>
+<li><h5><a href="#/user/get_policy">获取保单详情</a></li>
+<li><h5><a href="#/user/add_policy">添加保单</a></li>
+<li><h5><a href="#/user/get_collects">获取收藏列表</a></li>
+<li><h5><a href="#/user/add_collect">添加收藏</a></li>
+<li><h5><a href="#/user/delete_collect">删除收藏</a></li>
+<li><h5><a href="#/user/bookin_goods">缺货登记</a></li>
+</ul></li>
+<li><h3>商品模块
+
+<ul>
+<li><h5><a href="#/goods/get_categories">获取商品分类列表</a></li>
+<li><h5><a href="#/goods/get_goodes">获取商品列表</a></li>
+<li><h5><a href="#/goods/get_goods">获取商品详情</a></li>
+<li><h5><a href="#/goods/get_goods_stockouts">获取商品缺货登记列表</a></li>
+</ul></li>
+<li><h3>订单模块
+
+<ul>
+<li><h5><a href="#/order/add_carts">添加商品到购物车</a></li>
+<li><h5><a href="#/order/get_carts">获取购物车商品列表</a></li>
+<li><h5><a href="#/order/delete_carts">删除购物车商品</a></li>
+<li><h5><a href="#/order/add_order">提交订单</a></li>
+<li><h5><a href="#/order/get_orders">获取订单列表</a></li>
+<li><h5><a href="#/order/get_order">获取订单详情</a></li>
+<li><h5><a href="#/order/buy_card">购买等级卡</a></li>
+</ul></li>
+<li><h3>文章模块
+
+<ul>
+<li><h5><a href="#/article/get_articles">获取文章列表</a></li>
+<li><h5><a href="#/article/get_article">获取文章详情</a></li>
+</ul></li>
+<li><h3>广告模块
+
+<ul>
+<li><h5><a href="#/banner/get_banners">获取广告列表</a></li>
+</ul></li>
+</ul>
+
+<hr>
+
+<h1 id="toc_4">接口详情</h1>
+
+<h2 id="toc_5"><a name="/common/get_verifycode">获取图片验证码</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取图片验证码</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/common/get_verifycode</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<p>无</p>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /common/get_verifycode HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- captcha_key</td>
+<td style="text-align: left">string</td>
+<td>验证码key</td>
+</tr>
+<tr>
+<td style="text-align: left">- captcha_img</td>
+<td style="text-align: left">string</td>
+<td>Base64加密后的验证码图片</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;captcha_key&quot;: &quot;KAfmVrHFTk3WDVT0YBwgS6JtOXVJd4yn&quot;,
+    &quot;captcha_img&quot;: &quot;data:image\/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAgCAIAAAAdc\/jyAAAEUklEQVRoge2YT0hUURTGv\/cYRERIImQQibCIQURcSViEDCIiEkOESERERauIWVS4bCEiLiTERcgQESERMYto4UJEIiREQsSFtCgbSsIGi0lEhoFfi\/cYncn3T8c\/gR+D+I7nnO\/c755z7\/gMdIRNhCSJI00kSYZhHnQJhwullsMwSpxwf1FqOf7zuTsalgK4yvHrl758cXP4+lXfv5e2oIOFqxxDQ6qr0\/nzjg7JpGpr9eBByctyhPvZtPuTC4k8tv4OLC5SVoZEdTVO+PABiZMnt\/9rLsfv346x+4CiFXk5yy2grQ3LQXJbVV0dEu\/fF9uHhqit5du3AAUdLDzkGBtD4sQJTp1CYnbW0bO3F4m7dwuM6TQVFVy\/XrJyPTE8zJkzmCbNzXz8GDjcTY5MhpoaJJ4+JRZD4uVLx0Rzc0iEw+Rym8a+PkyThYVgNaXTDAzQ3k5DAy0txOMsLrr5LyzQ10cux82bm70scfw4qVQwao\/uuHcPiZYWgIcPkejrc0tXX4\/ExIT9mM0SDtPZ6b8agHfvClZlfdx5IxEkW45olKkpZmZobETixg2\/7LjLMTdHKEQoxPw8wOiod\/ZHj5C4fdt+fPYMiampAAUtL1NVhcSFC4yNsbDAzAzDwyQS3ryWFvn2nJ1ForycTMYXteQqR0sLEvG4\/Tg5udkpTlhctLs0mwVobKS52Vcpedy\/j0RHh53BJyxeic+fC+zWEp4\/95vHUY5EAomamk1pUyn7WH3yxG2+mpqQePuWiQkkRkf9lmLB6vDp6WBRed43bwqMVqlBptVBDmvlVq54nK4uIhHKywvmeXV1+6QDA0hcu0ZnJxIVFfT3B9jt6mokVlb8+hfxXr1aYEynCYUoKyOd9gh3GxZLi6KPaSIRi9Hf7\/g1ZGnJlsA06e62QyIRJid9Lcm60Yt63g8s3spK1tcL7B0dHk26VQFHOa5cIRrlzh0GB0kmmZ9nfZ2uLiSSSY\/Kzp1D4tIlgOlpu\/+tffvxwyO2vR2J16893Fx4X70qMFrHeTRa7Jzf40Kj60VbhHgcicFBD7fHj5G4fNl+zOUYHKSyEomqKkZG3GL7+x2nfWkpGK+FTIbyckyT5eVN43ZCWD+DyDEyUnCPOmF5GdMsvuFSKWIx2tpIJFhbc4utqECit5eNDYBslvFxLl7cIS\/Q3U1bm\/1t0H29AeQYH0eitdXbs7U12PW2FdaNZp0CZ8\/a0kj09OyK1+cyA7z+iUTU1KT6em\/Pnh5Jmp0N9I+1jVu3lEyqoUFra\/r0SRsbam5WIqEXL3bIaxgyDIHP13QGUinf6P35o5UVnT69qyQ\/f2p1VeGwjh3bOa+lQiAYRqnl8EG5Dd0OSnen0I4WdQBy7B2CqvDvHhhGqMQ17T\/yKgTd1O38\/2c5djwUznkMO9khmRc\/h0hJVMi\/ZN6axx6WPdUi0DHp7llCIRyS7P2wlETr3QuxbTv8k9k4HENyWPAXnAwWbrPhluAAAAAASUVORK5CYII=&quot;
+  }
+}</code></pre></div>
+
+<h2 id="toc_6"><a name="/common/get_sms">发送短信验证码</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>发送短信验证码</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/common/get_sms</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">mobile</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">captcha_key</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>图片验证码key</td>
+</tr>
+<tr>
+<td style="text-align: left">captcha_value</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>图片验证码</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /common/get_sms?mobile=18601032623&amp;captcha_key=Qyx10L5K5iESftzMVewUz3YkjqmOMZXM&amp;captcha_value=wqk4 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left"><div style="width:120px;"> - sms_status</td>
+<td style="text-align: left">number</td>
+<td>短信发送状态，枚举值：[0-发送成功，-1-账号未注册，-2-其他错误，-3-密码错误，-4-手机号格式不对，-5-余额不足，-6-发送时间格式不正确，-7-短信内容未加签名，-101-调用接口速度太快]</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;sms_status&quot;: 0
+  }
+}</code></pre></div>
+
+<h2 id="toc_7"><a name="/user/login">登录</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>会员登录</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/login</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">account</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>用户账号或手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">password</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>密码</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/login HTTP/1.1
+
+account=test_account&amp;password=888888</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- user_id</td>
+<td style="text-align: left">number</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- token</td>
+<td style="text-align: left">string</td>
+<td>用户身份令牌</td>
+</tr>
+<tr>
+<td style="text-align: left">- has<u>weixin</u>grant</td>
+<td style="text-align: left">number</td>
+<td>是否微信授权，0-未授权，1-已授权</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;user_id&quot;: 1,
+    &quot;token&quot;: &quot;c3fd0dd1598034b21967ec9a88ba1ba3&quot;,
+    &quot;has_weinxin_grant&quot;: 0
+  }
+}   </code></pre></div>
+
+<h2 id="toc_8"><a name="/user/register">注册</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>会员注册</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/register</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">account</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>用户账号或手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">password</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>密码</td>
+</tr>
+<tr>
+<td style="text-align: left">re_password</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>重复密码</td>
+</tr>
+<tr>
+<td style="text-align: left">source</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>用户来源</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/register HTTP/1.1
+
+account=test_account&amp;password=888888&amp;re_password=888888&amp;source=qrcode</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- account</td>
+<td style="text-align: left">string</td>
+<td>用户账号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;account&quot;: &quot;18601032625&quot;
+  }
+}</code></pre></div>
+
+<h2 id="toc_9"><a name="/user/login_weixin">微信登录</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>微信登录</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/login_weixin</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">openid</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>微信openid</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/login_weixin HTTP/1.1
+
+openid=**********</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- token</td>
+<td style="text-align: left">string</td>
+<td>用户身份令牌</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;token&quot;: &quot;c3fd0dd1598034b21967ec9a88ba1ba3&quot;
+  }
+}   </code></pre></div>
+
+<h2 id="toc_10"><a name="/user/register_weixin">微信注册</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>微信注册</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/register_weixin</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">openid</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>微信openid</td>
+</tr>
+<tr>
+<td style="text-align: left">mobile</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">source</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>用户来源</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/register_weixin HTTP/1.1
+
+openid=**********&amp;mobile=18600088888&amp;source=qrcode</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- token</td>
+<td style="text-align: left">string</td>
+<td>用户身份令牌</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;token&quot;: &quot;c3fd0dd1598034b21967ec9a88ba1ba3&quot;
+  }
+}   </code></pre></div>
+
+<h2 id="toc_11"><a name="/user/login_sms">短信登录</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>短信登录</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/login_sms</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">mobile</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">sms_code</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>短信验证码</td>
+</tr>
+<tr>
+<td style="text-align: left">source</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>用户来源</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/login_weixin HTTP/1.1
+
+mobile=18601032623&amp;sms_code=112879</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- user_id</td>
+<td style="text-align: left">number</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- token</td>
+<td style="text-align: left">string</td>
+<td>用户身份令牌</td>
+</tr>
+<tr>
+<td style="text-align: left">- has<u>weixin</u>grant</td>
+<td style="text-align: left">number</td>
+<td>是否微信授权，0-未授权，1-已授权</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;user_id&quot;: 1,
+    &quot;token&quot;: &quot;c3fd0dd1598034b21967ec9a88ba1ba3&quot;,
+    &quot;has_weinxin_grant&quot;: 0
+  }
+}   </code></pre></div>
+
+<h2 id="toc_12"><a name="/user/get_profile">获取个人资料</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取个人资料</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/get_profile</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<p>无</p>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /user/get_profile HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- user_id</td>
+<td style="text-align: left">number</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- user_account</td>
+<td style="text-align: left">string</td>
+<td>账号</td>
+</tr>
+<tr>
+<td style="text-align: left">- user_mobile</td>
+<td style="text-align: left">string</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">- user_nickname</td>
+<td style="text-align: left">string</td>
+<td>昵称</td>
+</tr>
+<tr>
+<td style="text-align: left">- user_avatar</td>
+<td style="text-align: left">string</td>
+<td>用户头像</td>
+</tr>
+<tr>
+<td style="text-align: left">- baby_name</td>
+<td style="text-align: left">string</td>
+<td>宝宝名字</td>
+</tr>
+<tr>
+<td style="text-align: left">- baby_sex</td>
+<td style="text-align: left">string</td>
+<td>宝宝性别，unselect-未选择，male-男，female-女</td>
+</tr>
+<tr>
+<td style="text-align: left">- baby_birthday</td>
+<td style="text-align: left">string</td>
+<td>宝宝生日</td>
+</tr>
+<tr>
+<td style="text-align: left">- last_login_ip</td>
+<td style="text-align: left">string</td>
+<td>最后登录ip</td>
+</tr>
+<tr>
+<td style="text-align: left">- last_login_time</td>
+<td style="text-align: left">string</td>
+<td>最后登录时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- created_at</td>
+<td style="text-align: left">string</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- updated_at</td>
+<td style="text-align: left">string</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- gradecard</td>
+<td style="text-align: left">object</td>
+<td>用户等级卡</td>
+</tr>
+<tr>
+<td style="text-align: left">- - user_card_id</td>
+<td style="text-align: left">number</td>
+<td>用户等级卡编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - user_id</td>
+<td style="text-align: left">number</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_id</td>
+<td style="text-align: left">number</td>
+<td>等级卡编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_name</td>
+<td style="text-align: left">string</td>
+<td>等级卡名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_type</td>
+<td style="text-align: left">number</td>
+<td>等级卡类型，1-等级卡，2-物流卡</td>
+</tr>
+<tr>
+<td style="text-align: left">- - remain_rules</td>
+<td style="text-align: left">object</td>
+<td>等级卡剩余权益</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - express_times</td>
+<td style="text-align: left">number</td>
+<td>剩余物流次数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - toys_count_pertime</td>
+<td style="text-align: left">number</td>
+<td>同时拥有玩具个数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - star_toys_count_pertime</td>
+<td style="text-align: left">number</td>
+<td>同时拥有星标玩具个数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - normal_toys_count_pertime</td>
+<td style="text-align: left">number</td>
+<td>同时拥有普通玩具个数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - toys_total_count</td>
+<td style="text-align: left">number</td>
+<td>剩余可租玩具件数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - can_pause_days</td>
+<td style="text-align: left">number</td>
+<td>可暂停天数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - can_buy_expresscard</td>
+<td style="text-align: left">number</td>
+<td>是否允许购买物流卡，0-不允许，1-允许</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - can_add_policy</td>
+<td style="text-align: left">number</td>
+<td>是否允许添加保单，0-不允许，1-允许</td>
+</tr>
+<tr>
+<td style="text-align: left">- - remain_duration</td>
+<td style="text-align: left">string</td>
+<td>等级卡剩余天数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - started_at</td>
+<td style="text-align: left">string</td>
+<td>开始时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - expired_at</td>
+<td style="text-align: left">string</td>
+<td>过期时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - paused_at</td>
+<td style="text-align: left">string</td>
+<td>暂停时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - unpaused_at</td>
+<td style="text-align: left">string</td>
+<td>停止暂停时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - created_at</td>
+<td style="text-align: left">string</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - updated_at</td>
+<td style="text-align: left">string</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_status</td>
+<td style="text-align: left">string</td>
+<td>等级卡状态，枚举值：[使用中,已暂停]</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;user_id&quot;: &quot;1&quot;,
+    &quot;user_account&quot;: &quot;xiaoxue85&quot;,
+    &quot;user_mobile&quot;: &quot;18601032623&quot;,
+    &quot;user_nickname&quot;: &quot;三维逻辑&quot;,
+    &quot;user_avatar&quot;: &quot;\/avatar\/20180201-140953-77887.jpg&quot;,
+    &quot;baby_name&quot;: &quot;小宝宝&quot;,
+    &quot;baby_sex&quot;: &quot;male&quot;,
+    &quot;baby_birthday&quot;: &quot;2012-01-28&quot;,
+    &quot;last_login_ip&quot;: &quot;127.0.0.1&quot;,
+    &quot;last_login_time&quot;: &quot;2018-03-09 22:51:49&quot;,
+    &quot;created_at&quot;: &quot;2018-01-13 11:21:38&quot;,
+    &quot;updated_at&quot;: &quot;2018-02-02 21:39:33&quot;,
+    &quot;gradecard&quot;: {
+      &quot;user_card_id&quot;: &quot;2&quot;,
+      &quot;user_id&quot;: &quot;1&quot;,
+      &quot;card_id&quot;: &quot;3&quot;,
+      &quot;card_name&quot;: &quot;年卡&quot;,
+      &quot;card_type&quot;: &quot;1&quot;,
+      &quot;remain_rules&quot;: {
+        &quot;express_times&quot;: 13,
+        &quot;toys_count_pertime&quot;: 2,
+        &quot;star_toys_count_pertime&quot;: 1,
+        &quot;normal_toys_count_pertime&quot;: 2,
+        &quot;toys_total_count&quot;: 24,
+        &quot;can_pause_days&quot;: 30,
+        &quot;can_buy_expresscard&quot;: 1,
+        &quot;can_add_policy&quot;: 1
+      },
+      &quot;remain_duration&quot;: &quot;363天&quot;,
+      &quot;started_at&quot;: &quot;2018-03-07 11:08:54&quot;,
+      &quot;expired_at&quot;: 0,
+      &quot;paused_at&quot;: 0,
+      &quot;unpaused_at&quot;: 0,
+      &quot;created_at&quot;: &quot;2018-03-07 11:08:54&quot;,
+      &quot;updated_at&quot;: &quot;2018-03-09 23:00:43&quot;,
+      &quot;card_status&quot;: &quot;使用中&quot;
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_13"><a name="/user/update_profile">修改个人资料</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>修改个人资料</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/update_profile</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">user_nickname</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>用户昵称</td>
+</tr>
+<tr>
+<td style="text-align: left">user_avatar</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>用户头像地址</td>
+</tr>
+<tr>
+<td style="text-align: left">baby_name</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>宝宝名字</td>
+</tr>
+<tr>
+<td style="text-align: left">baby_sex</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>宝宝性别，unselect-未选择，male-男，female-女</td>
+</tr>
+<tr>
+<td style="text-align: left">baby_birthday</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>宝宝生日</td>
+</tr>
+<tr>
+<td style="text-align: left">user_pass</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>用户密码</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/update_profile HTTP/1.1
+
+user_nickname=%E4%B8%89%E7%BB%B4%E9%80%BB%E8%BE%91%E7%9A%84%E8%B4%A6%E5%8F%B7&amp;user_avatar=http%3A%2F%2Fwww.baidu.com%2F1.png&amp;baby_name=%E5%B0%8F%E5%AE%9D%E5%AE%9D%E7%9A%84%E6%98%B5%E7%A7%B0&amp;baby_sex=male&amp;baby_birthday=2012-01-28</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">empty</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: []
+}</code></pre></div>
+
+<h2 id="toc_14"><a name="/user/get_own_gradecards">获取持有等级卡列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取持有等级卡列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/get_own_gradecards</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">card_type</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>卡类型，1-等级卡，2-物流卡</td>
+</tr>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /user/get_own_gradecards?card_type=1&amp;start=0&amp;number=2 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - user_card_id</td>
+<td style="text-align: left">number</td>
+<td>用户等级卡编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - user_id</td>
+<td style="text-align: left">number</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_id</td>
+<td style="text-align: left">number</td>
+<td>等级卡编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_name</td>
+<td style="text-align: left">string</td>
+<td>等级卡名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_type</td>
+<td style="text-align: left">number</td>
+<td>等级卡类型，1-等级卡，2-物流卡</td>
+</tr>
+<tr>
+<td style="text-align: left">- - remain_rules</td>
+<td style="text-align: left">object</td>
+<td>等级卡剩余权益</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - express_times</td>
+<td style="text-align: left">number</td>
+<td>剩余物流次数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - toys_count_pertime</td>
+<td style="text-align: left">number</td>
+<td>同时拥有玩具个数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - star_toys_count_pertime</td>
+<td style="text-align: left">number</td>
+<td>同时拥有星标玩具个数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - normal_toys_count_pertime</td>
+<td style="text-align: left">number</td>
+<td>同时拥有普通玩具个数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - toys_total_count</td>
+<td style="text-align: left">number</td>
+<td>剩余可租玩具件数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - can_pause_days</td>
+<td style="text-align: left">number</td>
+<td>可暂停天数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - can_buy_expresscard</td>
+<td style="text-align: left">number</td>
+<td>是否允许购买物流卡，0-不允许，1-允许</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - can_add_policy</td>
+<td style="text-align: left">number</td>
+<td>是否允许添加保单，0-不允许，1-允许</td>
+</tr>
+<tr>
+<td style="text-align: left">- - remain_duration</td>
+<td style="text-align: left">string</td>
+<td>等级卡剩余天数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - started_at</td>
+<td style="text-align: left">string</td>
+<td>开始时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - expired_at</td>
+<td style="text-align: left">string</td>
+<td>过期时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - paused_at</td>
+<td style="text-align: left">string</td>
+<td>暂停时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - unpaused_at</td>
+<td style="text-align: left">string</td>
+<td>停止暂停时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - created_at</td>
+<td style="text-align: left">string</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - updated_at</td>
+<td style="text-align: left">string</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_status</td>
+<td style="text-align: left">string</td>
+<td>等级卡状态，枚举值：[使用中,已暂停]</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;user_card_id&quot;: &quot;1&quot;,
+        &quot;user_id&quot;: &quot;1&quot;,
+        &quot;card_id&quot;: &quot;1&quot;,
+        &quot;card_name&quot;: &quot;1件月卡&quot;,
+        &quot;card_type&quot;: &quot;1&quot;,
+        &quot;remain_rules&quot;: {
+          &quot;express_times&quot;: 1,
+          &quot;toys_count_pertime&quot;: 1,
+          &quot;star_toys_count_pertime&quot;: 0,
+          &quot;normal_toys_count_pertime&quot;: 1,
+          &quot;toys_total_count&quot;: 0,
+          &quot;can_pause_days&quot;: 0,
+          &quot;can_buy_expresscard&quot;: 0,
+            &quot;can_add_policy&quot;: 0
+        },
+        &quot;remain_duration&quot;: 0,
+        &quot;started_at&quot;: &quot;2018-01-22 13:10:29&quot;,
+        &quot;expired_at&quot;: &quot;2018-03-03 10:13:35&quot;,
+        &quot;paused_at&quot;: 0,
+        &quot;unpaused_at&quot;: 0,
+        &quot;created_at&quot;: &quot;2018-01-22 13:02:09&quot;,
+        &quot;updated_at&quot;: &quot;2018-03-03 10:13:35&quot;,
+        &quot;card_status&quot;: &quot;已过期&quot;
+      },
+      {
+        &quot;user_card_id&quot;: &quot;2&quot;,
+        &quot;user_id&quot;: &quot;1&quot;,
+        &quot;card_id&quot;: &quot;3&quot;,
+        &quot;card_name&quot;: &quot;年卡&quot;,
+        &quot;card_type&quot;: &quot;1&quot;,
+        &quot;remain_rules&quot;: {
+          &quot;express_times&quot;: 13,
+          &quot;toys_count_pertime&quot;: 2,
+          &quot;star_toys_count_pertime&quot;: 1,
+          &quot;normal_toys_count_pertime&quot;: 2,
+          &quot;toys_total_count&quot;: 24,
+          &quot;can_pause_days&quot;: 30,
+          &quot;can_buy_expresscard&quot;: 1,
+          &quot;can_add_policy&quot;: 1
+        },
+        &quot;remain_duration&quot;: &quot;363天&quot;,
+        &quot;started_at&quot;: &quot;2018-03-07 11:08:54&quot;,
+        &quot;expired_at&quot;: 0,
+        &quot;paused_at&quot;: 0,
+        &quot;unpaused_at&quot;: 0,
+        &quot;created_at&quot;: &quot;2018-03-07 11:08:54&quot;,
+        &quot;updated_at&quot;: &quot;2018-03-09 23:12:01&quot;,
+        &quot;card_status&quot;: &quot;使用中&quot;
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: 0,
+      &quot;number&quot;: 30,
+      &quot;count&quot;: 2
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_15"><a name="/user/get_areas">获取地址区域列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取地址区域列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/get_areas</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /user/get_areas HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - value</td>
+<td style="text-align: left">number</td>
+<td>地址区域编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - label</td>
+<td style="text-align: left">string</td>
+<td>地址区域名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - children</td>
+<td style="text-align: left">array</td>
+<td>子级区域列表</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - value</td>
+<td style="text-align: left">number</td>
+<td>地址区域编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - label</td>
+<td style="text-align: left">string</td>
+<td>地址区域名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;label&quot;: &quot;深圳市&quot;,
+        &quot;value&quot;: &quot;1&quot;,
+        &quot;children&quot;: [
+          {
+            &quot;label&quot;: &quot;市辖区&quot;,
+            &quot;value&quot;: &quot;2&quot;
+          },
+          {
+            &quot;label&quot;: &quot;罗湖区&quot;,
+            &quot;value&quot;: &quot;3&quot;
+          },
+          {
+            &quot;label&quot;: &quot;福田区&quot;,
+            &quot;value&quot;: &quot;4&quot;
+          },
+          {
+            &quot;label&quot;: &quot;南山区&quot;,
+            &quot;value&quot;: &quot;5&quot;
+          },
+          {
+            &quot;label&quot;: &quot;宝安区&quot;,
+            &quot;value&quot;: &quot;6&quot;
+          },
+          {
+            &quot;label&quot;: &quot;龙岗区&quot;,
+            &quot;value&quot;: &quot;7&quot;
+          },
+          {
+            &quot;label&quot;: &quot;盐田区&quot;,
+            &quot;value&quot;: &quot;8&quot;
+          }
+        ]
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: 0,
+      &quot;number&quot;: 30,
+      &quot;count&quot;: 1
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_16"><a name="/user/get_addresses">获取地址列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取地址列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/get_addresses</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /user/get_addresses?start=0&amp;number=2 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - address_id</td>
+<td style="text-align: left">number</td>
+<td>地址编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - user_id</td>
+<td style="text-align: left">number</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - consignee</td>
+<td style="text-align: left">string</td>
+<td>收货人</td>
+</tr>
+<tr>
+<td style="text-align: left">- - mobile</td>
+<td style="text-align: left">string</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - area_id</td>
+<td style="text-align: left">string</td>
+<td>区域编号，格式为：1-8(上级区域编号-区域编号)</td>
+</tr>
+<tr>
+<td style="text-align: left">- - address</td>
+<td style="text-align: left">string</td>
+<td>地址</td>
+</tr>
+<tr>
+<td style="text-align: left">- - is_default</td>
+<td style="text-align: left">number</td>
+<td>是否默认，0-不是默认，1-默认</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;address_id&quot;: &quot;2&quot;,
+        &quot;user_id&quot;: &quot;1&quot;,
+        &quot;consignee&quot;: &quot;小甜甜&quot;,
+        &quot;mobile&quot;: &quot;18600088888&quot;,
+        &quot;area_id&quot;: &quot;1-7&quot;,
+        &quot;address&quot;: &quot;中关村软件园广场4号楼&quot;,
+        &quot;is_default&quot;: &quot;1&quot;
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: 0,
+      &quot;number&quot;: 30,
+      &quot;count&quot;: &quot;1&quot;
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_17"><a name="/user/add_address">添加收货地址</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>添加收货地址</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/add_address</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">consignee</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>收货人</td>
+</tr>
+<tr>
+<td style="text-align: left">mobile</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">area_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>区域编号，格式为：1-8(上级区域编号-区域编号)</td>
+</tr>
+<tr>
+<td style="text-align: left">address</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>地址</td>
+</tr>
+<tr>
+<td style="text-align: left">is_default</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>是否默认，0-不是默认，1-默认</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/add_address HTTP/1.1
+
+consignee=%E5%B0%8F%E7%94%9C%E7%94%9C&amp;mobile=18600088888&amp;area_id=1-2&amp;address=%E4%B8%AD%E5%85%B3%E6%9D%91%E8%BD%AF%E4%BB%B6%E5%9B%AD%E5%B9%BF%E5%9C%BA4%E5%8F%B7%E6%A5%BC&amp;is_default=1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- address_id</td>
+<td style="text-align: left">number</td>
+<td>新增地址编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;address_id&quot;: &quot;2&quot;
+  }
+}</code></pre></div>
+
+<h2 id="toc_18"><a name="/user/edit_address">修改收货地址</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>修改收货地址</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/edit_address</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">address_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>收货地址编号</td>
+</tr>
+<tr>
+<td style="text-align: left">consignee</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>收货人</td>
+</tr>
+<tr>
+<td style="text-align: left">mobile</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">area_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>区域编号，格式为：1-8(上级区域编号-区域编号)</td>
+</tr>
+<tr>
+<td style="text-align: left">address</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>地址</td>
+</tr>
+<tr>
+<td style="text-align: left">is_default</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>是否默认，0-不是默认，1-默认</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/edit_address HTTP/1.1
+
+address_id=1&amp;consignee=%E5%B0%8F%E7%94%9C%E7%94%9C&amp;mobile=18600088888&amp;area_id=1-2&amp;address=%E4%B8%AD%E5%85%B3%E6%9D%91%E8%BD%AF%E4%BB%B6%E5%9B%AD%E5%B9%BF%E5%9C%BA4%E5%8F%B7%E6%A5%BC&amp;is_default=1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- address_id</td>
+<td style="text-align: left">number</td>
+<td>修改地址编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;address_id&quot;: &quot;1&quot;
+  }
+}</code></pre></div>
+
+<h2 id="toc_19"><a name="/user/delete_address">删除收货地址</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>删除收货地址</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/delete_address</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">address_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>收货地址编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/delete_address HTTP/1.1
+
+address_id=2</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">empty</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: []
+}</code></pre></div>
+
+<h2 id="toc_20"><a name="/user/get_gradecards">获取等级卡列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取等级卡列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/get_gradecards</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /user/get_gradecards?start=0&amp;number=2 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_id</td>
+<td style="text-align: left">number</td>
+<td>等级卡编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_no</td>
+<td style="text-align: left">string</td>
+<td>等级卡编码</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_name</td>
+<td style="text-align: left">string</td>
+<td>等级卡名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_type</td>
+<td style="text-align: left">number</td>
+<td>等级卡类型，1-等级卡，2-物流卡</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_thumb</td>
+<td style="text-align: left">string</td>
+<td>等级卡缩略图</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;card_id&quot;: &quot;1&quot;,
+        &quot;card_no&quot;: &quot;one_month&quot;,
+        &quot;card_name&quot;: &quot;1件月卡&quot;,
+        &quot;card_type&quot;: &quot;1&quot;,
+        &quot;card_thumb&quot;:&quot;&quot;
+      },
+      {
+        &quot;card_id&quot;: &quot;2&quot;,
+        &quot;card_no&quot;: &quot;two_month&quot;,
+        &quot;card_name&quot;: &quot;2件月卡&quot;,
+        &quot;card_type&quot;: &quot;1&quot;,
+        &quot;card_thumb&quot;:&quot;&quot;
+      },
+      {
+        &quot;card_id&quot;: &quot;3&quot;,
+        &quot;card_no&quot;: &quot;one_year&quot;,
+        &quot;card_name&quot;: &quot;年卡&quot;,
+        &quot;card_type&quot;: &quot;1&quot;,
+        &quot;card_thumb&quot;:&quot;&quot;
+      },
+      {
+        &quot;card_id&quot;: &quot;4&quot;,
+        &quot;card_no&quot;: &quot;vip&quot;,
+        &quot;card_name&quot;: &quot;VIP卡&quot;,
+        &quot;card_type&quot;: &quot;1&quot;,
+        &quot;card_thumb&quot;:&quot;&quot;
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: 0,
+      &quot;number&quot;: 30,
+      &quot;count&quot;: &quot;4&quot;
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_21"><a name="/user/get_gradecard">获取等级卡详情</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取等级卡详情</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/get_gradecard</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">card_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>等级卡编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /user/get_gradecard?card_id=1 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- card_id</td>
+<td style="text-align: left">number</td>
+<td>等级卡编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- card_no</td>
+<td style="text-align: left">string</td>
+<td>等级卡编码</td>
+</tr>
+<tr>
+<td style="text-align: left">- card_name</td>
+<td style="text-align: left">string</td>
+<td>等级卡名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- card_type</td>
+<td style="text-align: left">number</td>
+<td>等级卡类型，1-等级卡，2-物流卡</td>
+</tr>
+<tr>
+<td style="text-align: left">- card_price</td>
+<td style="text-align: left">decimal</td>
+<td>价格</td>
+</tr>
+<tr>
+<td style="text-align: left">- card_rules</td>
+<td style="text-align: left">object</td>
+<td>等级卡权益</td>
+</tr>
+<tr>
+<td style="text-align: left">- - express_times</td>
+<td style="text-align: left">number</td>
+<td>剩余物流次数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - toys_count_pertime</td>
+<td style="text-align: left">number</td>
+<td>同时拥有玩具个数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - star_toys_count_pertime</td>
+<td style="text-align: left">number</td>
+<td>同时拥有星标玩具个数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - normal_toys_count_pertime</td>
+<td style="text-align: left">number</td>
+<td>同时拥有普通玩具个数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - toys_total_count</td>
+<td style="text-align: left">number</td>
+<td>剩余可租玩具件数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - can_pause_days</td>
+<td style="text-align: left">number</td>
+<td>可暂停天数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - can_buy_expresscard</td>
+<td style="text-align: left">number</td>
+<td>是否允许购买物流卡，0-不允许，1-允许</td>
+</tr>
+<tr>
+<td style="text-align: left">- card_duration</td>
+<td style="text-align: left">timestamp</td>
+<td>等级卡时长</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_thumb</td>
+<td style="text-align: left">string</td>
+<td>等级卡缩略图</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;card_id&quot;: &quot;1&quot;,
+    &quot;card_no&quot;: &quot;one_month&quot;,
+    &quot;card_name&quot;: &quot;1件月卡&quot;,
+    &quot;card_type&quot;: &quot;1&quot;,
+    &quot;card_price&quot;: &quot;198.00&quot;,
+    &quot;card_rules&quot;: {
+      &quot;express_times&quot;: 3,
+      &quot;toys_count_pertime&quot;: 1,
+      &quot;star_toys_count_pertime&quot;: 0,
+      &quot;normal_toys_count_pertime&quot;: 1,
+      &quot;toys_total_count&quot;: 2,
+      &quot;can_pause_days&quot;: 0,
+      &quot;can_buy_expresscard&quot;: 0
+    },
+    &quot;card_duration&quot;: &quot;30天&quot;,
+    &quot;card_thumb&quot;:&quot;&quot;
+  }
+}</code></pre></div>
+
+<h2 id="toc_22"><a name="/user/handle_gradecard">等级卡暂停/恢复</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>等级卡暂停/恢复</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/handle_gradecard</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">user_card_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>用户等级卡编号</td>
+</tr>
+<tr>
+<td style="text-align: left">handle_type</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>操作类型，pause-暂停，unpause-恢复</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/handle_gradecard HTTP/1.1
+
+user_card_id=1&amp;handle_type=pause</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">empty</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: []
+}</code></pre></div>
+
+<h2 id="toc_23"><a name="/user/get_policy">获取保单详情</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取保单详情</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/get_policy</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">user_card_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>用户等级卡编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /user/get_policy?user_card_id=1 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- policy_id</td>
+<td style="text-align: left">number</td>
+<td>保单编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- user_id</td>
+<td style="text-align: left">number</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- user_card_id</td>
+<td style="text-align: left">number</td>
+<td>用户等级卡编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- truename</td>
+<td style="text-align: left">string</td>
+<td>姓名</td>
+</tr>
+<tr>
+<td style="text-align: left">- mobile</td>
+<td style="text-align: left">string</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">- sex</td>
+<td style="text-align: left">number</td>
+<td>性别，0-未选择，1-男，2-女</td>
+</tr>
+<tr>
+<td style="text-align: left">- identitycard_no</td>
+<td style="text-align: left">string</td>
+<td>身份证号码</td>
+</tr>
+<tr>
+<td style="text-align: left">- address</td>
+<td style="text-align: left">string</td>
+<td>地址</td>
+</tr>
+<tr>
+<td style="text-align: left">- baby_name</td>
+<td style="text-align: left">string</td>
+<td>子女姓名</td>
+</tr>
+<tr>
+<td style="text-align: left">- baby_sex</td>
+<td style="text-align: left">number</td>
+<td>子女性别，0-未选择，1-男，2-女</td>
+</tr>
+<tr>
+<td style="text-align: left">- baby_identitycard_no</td>
+<td style="text-align: left">string</td>
+<td>子女身份证号码</td>
+</tr>
+<tr>
+<td style="text-align: left">- status</td>
+<td style="text-align: left">number</td>
+<td>状态，0-未填写，1-已填写，2-已入保</td>
+</tr>
+<tr>
+<td style="text-align: left">- policy_no</td>
+<td style="text-align: left">string</td>
+<td>保单号码</td>
+</tr>
+<tr>
+<td style="text-align: left">- policy_company</td>
+<td style="text-align: left">string</td>
+<td>保单所属公司</td>
+</tr>
+<tr>
+<td style="text-align: left">- created_at</td>
+<td style="text-align: left">string</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- updated_at</td>
+<td style="text-align: left">string</td>
+<td>更新时间</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;policy_id&quot;: &quot;1&quot;,
+    &quot;user_id&quot;: &quot;1&quot;,
+    &quot;user_card_id&quot;: &quot;2&quot;,
+    &quot;truename&quot;: &quot;薛会中&quot;,
+    &quot;mobile&quot;: &quot;18601032623&quot;,
+    &quot;sex&quot;: &quot;1&quot;,
+    &quot;identitycard_no&quot;: &quot;130525198603280016&quot;,
+    &quot;address&quot;: &quot;北京市海淀区东北旺西路&quot;,
+    &quot;baby_name&quot;: &quot;小牛牛&quot;,
+    &quot;baby_sex&quot;: &quot;2&quot;,
+    &quot;baby_identitycard_no&quot;: &quot;130525198603280016&quot;,
+    &quot;status&quot;: &quot;1&quot;,
+    &quot;policy_no&quot;: &quot;&quot;,
+    &quot;policy_company&quot;: &quot;&quot;,
+    &quot;created_at&quot;: &quot;2018-03-18 20:54:43&quot;,
+    &quot;updated_at&quot;: &quot;2018-04-10 21:31:47&quot;
+  }
+}</code></pre></div>
+
+<h2 id="toc_24"><a name="/user/add_policy">添加保单</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>添加保单</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/add_policy</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">user_card_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>用户等级卡编号</td>
+</tr>
+<tr>
+<td style="text-align: left">truename</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>姓名</td>
+</tr>
+<tr>
+<td style="text-align: left">mobile</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">sex</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>性别，1-男，2-女</td>
+</tr>
+<tr>
+<td style="text-align: left">identitycard_no</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>身份证号码</td>
+</tr>
+<tr>
+<td style="text-align: left">address</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>地址</td>
+</tr>
+<tr>
+<td style="text-align: left">baby_name</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>子女姓名</td>
+</tr>
+<tr>
+<td style="text-align: left">baby_sex</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>子女性别，1-男，2-女</td>
+</tr>
+<tr>
+<td style="text-align: left">baby_identitycard_no</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>子女身份证号码</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/add_policy HTTP/1.1
+
+user_card_id=2&amp;truename=%E8%96%9B%E4%BC%9A%E4%B8%AD&amp;sex=1&amp;identitycard_no=130525198603280016&amp;address=%E5%8C%97%E4%BA%AC%E5%B8%82%E6%B5%B7%E6%B7%80%E5%8C%BA%E4%B8%9C%E5%8C%97%E6%97%BA%E8%A5%BF%E8%B7%AF&amp;baby_name=%E5%B0%8F%E7%89%9B%E7%89%9B&amp;baby_sex=2&amp;baby_identitycard_no=130525198603280016</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- policy_id</td>
+<td style="text-align: left">number</td>
+<td>保单编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;policy_id&quot;: &quot;1&quot;
+  }
+}</code></pre></div>
+
+<h2 id="toc_25"><a name="/user/get_payhistories">获取支付记录列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取支付记录列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/get_payhistories</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">is_paid</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>是否支付，1-已支付，0-未支付</td>
+</tr>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /user/get_payhistories?is_paid=0&amp;start=0&amp;number=1 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - history_id</td>
+<td style="text-align: left">number</td>
+<td>记录编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - user_id</td>
+<td style="text-align: left">number</td>
+<td>会员编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_id</td>
+<td style="text-align: left">number</td>
+<td>等级卡编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_no</td>
+<td style="text-align: left">string</td>
+<td>等级卡编码</td>
+</tr>
+<tr>
+<td style="text-align: left">- - trade_no</td>
+<td style="text-align: left">string</td>
+<td>交易流水号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_name</td>
+<td style="text-align: left">string</td>
+<td>等级卡名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - need_money</td>
+<td style="text-align: left">decimal</td>
+<td>需支付金额</td>
+</tr>
+<tr>
+<td style="text-align: left">- - paid_money</td>
+<td style="text-align: left">decimal</td>
+<td>已支付金额</td>
+</tr>
+<tr>
+<td style="text-align: left">- - is_paid</td>
+<td style="text-align: left">number</td>
+<td>支付状态，1-已支付，0-未支付</td>
+</tr>
+<tr>
+<td style="text-align: left">- - pay_type</td>
+<td style="text-align: left">string</td>
+<td>支付类型，wepay-微信支付</td>
+</tr>
+<tr>
+<td style="text-align: left">- - third_trade_no</td>
+<td style="text-align: left">string</td>
+<td>第三方支付流水号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - paid_at</td>
+<td style="text-align: left">string</td>
+<td>支付时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - created_at</td>
+<td style="text-align: left">string</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - updated_at</td>
+<td style="text-align: left">string</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;history_id&quot;: &quot;1&quot;,
+        &quot;user_id&quot;: &quot;1&quot;,
+        &quot;card_id&quot;: &quot;1&quot;,
+        &quot;card_no&quot;: &quot;one_month&quot;,
+        &quot;trade_no&quot;: &quot;307896778&quot;,
+        &quot;card_name&quot;: &quot;1件月卡&quot;,
+        &quot;need_money&quot;: &quot;198.00&quot;,
+        &quot;paid_money&quot;: &quot;0.00&quot;,
+        &quot;is_paid&quot;: &quot;0&quot;,
+        &quot;pay_type&quot;: &quot;wepay&quot;,
+        &quot;third_trade_no&quot;: &quot;&quot;,
+        &quot;paid_at&quot;: 0,
+        &quot;created_at&quot;: &quot;2018-01-22 13:02:09&quot;,
+        &quot;updated_at&quot;: &quot;2018-01-22 13:02:09&quot;
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: &quot;0&quot;,
+      &quot;number&quot;: &quot;1&quot;,
+      &quot;count&quot;: &quot;1&quot;
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_26"><a name="/user/get_collects">获取收藏列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取收藏列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/get_collects</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /user/get_collects?start=0&amp;number=2 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - collect_id</td>
+<td style="text-align: left">number</td>
+<td>收藏编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - user_id</td>
+<td style="text-align: left">number</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_id</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_name</td>
+<td style="text-align: left">string</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_thumb</td>
+<td style="text-align: left">string</td>
+<td>商品缩略图</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_number</td>
+<td style="text-align: left">number</td>
+<td>商品库存，-1-库存充足，0-无货，大于0-库存数量</td>
+</tr>
+<tr>
+<td style="text-align: left">- - is_star</td>
+<td style="text-align: left">number</td>
+<td>星标玩具，1-星标玩具，0-非星标</td>
+</tr>
+<tr>
+<td style="text-align: left">- - age_id</td>
+<td style="text-align: left">number</td>
+<td>年龄属性编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - age_name</td>
+<td style="text-align: left">string</td>
+<td>年龄属性名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;collect_id&quot;: &quot;1&quot;,
+        &quot;user_id&quot;: &quot;1&quot;,
+        &quot;goods_id&quot;: &quot;1&quot;,
+        &quot;goods_name&quot;: &quot;第一个测试商品&quot;,
+        &quot;goods_thumb&quot;: &quot;https:\/\/www.baidu.com\/img\/bd_logo1.png&quot;,
+        &quot;goods_number&quot;: &quot;-1&quot;,
+        &quot;is_star&quot;: &quot;0&quot;,
+        &quot;age_id&quot;: &quot;7&quot;,
+        &quot;age_name&quot;: &quot;6-12个月&quot;
+      },
+      {
+        &quot;collect_id&quot;: &quot;3&quot;,
+        &quot;user_id&quot;: &quot;1&quot;,
+        &quot;goods_id&quot;: &quot;2&quot;,
+        &quot;goods_name&quot;: &quot;第二个测试商品&quot;,
+        &quot;goods_thumb&quot;: &quot;&quot;,
+        &quot;goods_number&quot;: &quot;-1&quot;,
+        &quot;is_star&quot;: &quot;1&quot;,
+        &quot;age_id&quot;: &quot;7&quot;,
+        &quot;age_name&quot;: &quot;6-12个月&quot;
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: 0,
+      &quot;number&quot;: 30,
+      &quot;count&quot;: &quot;2&quot;
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_27"><a name="/user/add_collect">添加收藏</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>添加收藏</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/add_collect</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">goods_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/add_collect HTTP/1.1
+
+goods_id=2</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- collect_id</td>
+<td style="text-align: left">number</td>
+<td>收藏编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;collect_id&quot;: &quot;3&quot;
+  }
+}</code></pre></div>
+
+<h2 id="toc_28"><a name="/user/delete_collect">删除收藏</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>删除收藏</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/delete_collect</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">collect_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>收藏编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/delete_collect HTTP/1.1
+
+collect_id=2</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">empty</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: []
+}</code></pre></div>
+
+<h2 id="toc_29"><a name="/user/bookin_goods">缺货登记</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>缺货登记</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/user/bookin_goods</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">goods_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /user/bookin_goods HTTP/1.1
+
+goods_id=1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">empty</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: []
+}</code></pre></div>
+
+<h2 id="toc_30"><a name="/goods/get_categories">获取商品分类列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取商品分类列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/goods/get_categories</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">category_no</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>如果为空，则返回所有分类，可选值为：[age,brand,size,type,ability]</td>
+</tr>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /goods/get_categories?category_no=age&amp;start=0&amp;number=2 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - category_id</td>
+<td style="text-align: left">number</td>
+<td>商品分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - category_no</td>
+<td style="text-align: left">string</td>
+<td>商品分类编码</td>
+</tr>
+<tr>
+<td style="text-align: left">- - category_name</td>
+<td style="text-align: left">string</td>
+<td>商品分类名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - parent_id</td>
+<td style="text-align: left">number</td>
+<td>父级分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - image_url</td>
+<td style="text-align: left">string</td>
+<td>商品分类图片</td>
+</tr>
+<tr>
+<td style="text-align: left">- - child</td>
+<td style="text-align: left">array</td>
+<td>子分类数组</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;category_id&quot;: &quot;1&quot;,
+        &quot;category_no&quot;: &quot;age&quot;,
+        &quot;category_name&quot;: &quot;年龄&quot;,
+        &quot;parent_id&quot;: &quot;0&quot;,
+        &quot;image_url&quot;: &quot;&quot;,
+        &quot;child&quot;: [
+          [
+            {
+              &quot;category_id&quot;: &quot;6&quot;,
+              &quot;category_no&quot;: &quot;&quot;,
+              &quot;category_name&quot;: &quot;0-6个月&quot;,
+              &quot;parent_id&quot;: &quot;1&quot;,
+              &quot;image_url&quot;: &quot;&quot;
+            }
+          ]
+        ]
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: &quot;0&quot;,
+      &quot;number&quot;: &quot;2&quot;,
+      &quot;count&quot;: 1
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_31"><a name="/goods/get_goodes">获取商品列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取商品列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/goods/get_goodes</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">age_id</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>年龄分类编号或以逗号分隔的编号，如：1,2</td>
+</tr>
+<tr>
+<td style="text-align: left">brand_id</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>品牌分类编号或以逗号分隔的编号，如：1,2</td>
+</tr>
+<tr>
+<td style="text-align: left">size_id</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>尺寸分类编号或以逗号分隔的编号，如：1,2</td>
+</tr>
+<tr>
+<td style="text-align: left">type_id</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>类型分类编号或以逗号分隔的编号，如：1,2</td>
+</tr>
+<tr>
+<td style="text-align: left">ability_id</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>能力分类编号或以逗号分隔的编号，如：1,2</td>
+</tr>
+<tr>
+<td style="text-align: left">is_star</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>是否星标玩具，0为否，1为是，2为全部</td>
+</tr>
+<tr>
+<td style="text-align: left">is_recommend</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>是否推荐玩具，0为否，1为是，2为全部</td>
+</tr>
+<tr>
+<td style="text-align: left">has_stock</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>是否有库存，0为否，1为是，2为全部</td>
+</tr>
+<tr>
+<td style="text-align: left">order_str</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>排序规则，默认为default，可选值为：[default,hot,new,price_high,price_low]</td>
+</tr>
+<tr>
+<td style="text-align: left">keywords</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">string</td>
+<td>搜索关键词</td>
+</tr>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /goods/get_goodes?age_id=7&amp;brand_id=14&amp;size_id=19&amp;type_id=22&amp;ability_id=34&amp;is_star=1&amp;is_recommend=1&amp;order_str=price_low&amp;keywords=%E4%BA%8C%E4%B8%AA HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_id</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_name</td>
+<td style="text-align: left">string</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - age_id</td>
+<td style="text-align: left">number</td>
+<td>年龄分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - brand_id</td>
+<td style="text-align: left">number</td>
+<td>品牌分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - size_id</td>
+<td style="text-align: left">number</td>
+<td>尺寸分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - type_id</td>
+<td style="text-align: left">number</td>
+<td>类型分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - ability_id</td>
+<td style="text-align: left">number</td>
+<td>能力分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_price</td>
+<td style="text-align: left">decimal</td>
+<td>商品价格</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_number</td>
+<td style="text-align: left">number</td>
+<td>商品库存，-1为不限</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_thumb</td>
+<td style="text-align: left">string</td>
+<td>商品封面缩略图</td>
+</tr>
+<tr>
+<td style="text-align: left">- - click_count</td>
+<td style="text-align: left">number</td>
+<td>点击次数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - is_star</td>
+<td style="text-align: left">number</td>
+<td>是否为星标玩具，1为是，0为否</td>
+</tr>
+<tr>
+<td style="text-align: left">- - is_recommend</td>
+<td style="text-align: left">number</td>
+<td>是否为推荐玩具，1为是，0为否</td>
+</tr>
+<tr>
+<td style="text-align: left">- - created_at</td>
+<td style="text-align: left">date</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - updated_at</td>
+<td style="text-align: left">date</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - age_name</td>
+<td style="text-align: left">string</td>
+<td>年龄分类名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - brand_name</td>
+<td style="text-align: left">string</td>
+<td>品牌分类名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - size_name</td>
+<td style="text-align: left">string</td>
+<td>尺寸分类名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - type_name</td>
+<td style="text-align: left">string</td>
+<td>类型分类名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - ability_name</td>
+<td style="text-align: left">string</td>
+<td>能力分类名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;goods_id&quot;: &quot;2&quot;,
+        &quot;goods_name&quot;: &quot;第二个测试商品&quot;,
+        &quot;age_id&quot;: &quot;8&quot;,
+        &quot;brand_id&quot;: &quot;13&quot;,
+        &quot;size_id&quot;: &quot;20&quot;,
+        &quot;type_id&quot;: &quot;23&quot;,
+        &quot;ability_id&quot;: &quot;35&quot;,
+        &quot;goods_price&quot;: &quot;20.80&quot;,
+        &quot;goods_number&quot;: &quot;-1&quot;,
+        &quot;goods_thumb&quot;: &quot;&quot;,
+        &quot;click_count&quot;: &quot;0&quot;,
+        &quot;is_star&quot;: &quot;1&quot;,
+        &quot;is_recommend&quot;: &quot;0&quot;,
+        &quot;created_at&quot;: &quot;2018-01-20 20:30:00&quot;,
+        &quot;updated_at&quot;: &quot;2018-01-20 20:30:00&quot;,
+        &quot;age_name&quot;: &quot;1-2岁&quot;,
+        &quot;brand_name&quot;: &quot;费雪&quot;,
+        &quot;size_name&quot;: &quot;小&quot;,
+        &quot;type_name&quot;: &quot;益智早教&quot;,
+        &quot;ability_name&quot;: &quot;视觉锻炼&quot;
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: &quot;0&quot;,
+      &quot;number&quot;: &quot;1&quot;,
+      &quot;count&quot;: &quot;2&quot;
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_32"><a name="/goods/get_goods">获取商品详情</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取商品详情</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/goods/get_goods</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">goods_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /goods/get_goods?goods_id=1 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- goods_id</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- goods_name</td>
+<td style="text-align: left">string</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- age_id</td>
+<td style="text-align: left">number</td>
+<td>年龄分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- brand_id</td>
+<td style="text-align: left">number</td>
+<td>品牌分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- size_id</td>
+<td style="text-align: left">number</td>
+<td>尺寸分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- type_id</td>
+<td style="text-align: left">number</td>
+<td>类型分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- ability_id</td>
+<td style="text-align: left">number</td>
+<td>能力分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- goods_price</td>
+<td style="text-align: left">decimal</td>
+<td>商品价格</td>
+</tr>
+<tr>
+<td style="text-align: left">- goods_number</td>
+<td style="text-align: left">number</td>
+<td>商品库存，-1为不限</td>
+</tr>
+<tr>
+<td style="text-align: left">- goods_thumb</td>
+<td style="text-align: left">string</td>
+<td>商品封面缩略图</td>
+</tr>
+<tr>
+<td style="text-align: left">- click_count</td>
+<td style="text-align: left">number</td>
+<td>点击次数</td>
+</tr>
+<tr>
+<td style="text-align: left">- goods_desc</td>
+<td style="text-align: left">string</td>
+<td>商品描述</td>
+</tr>
+<tr>
+<td style="text-align: left">- on_sale</td>
+<td style="text-align: left">number</td>
+<td>是否在售，1为是，0为否</td>
+</tr>
+<tr>
+<td style="text-align: left">- is_star</td>
+<td style="text-align: left">number</td>
+<td>是否为星标玩具，1为是，0为否</td>
+</tr>
+<tr>
+<td style="text-align: left">- is_recommend</td>
+<td style="text-align: left">number</td>
+<td>是否为推荐玩具，1为是，0为否</td>
+</tr>
+<tr>
+<td style="text-align: left">- created_at</td>
+<td style="text-align: left">date</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- updated_at</td>
+<td style="text-align: left">date</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- age_name</td>
+<td style="text-align: left">string</td>
+<td>年龄分类名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- brand_name</td>
+<td style="text-align: left">string</td>
+<td>品牌分类名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- size_name</td>
+<td style="text-align: left">string</td>
+<td>尺寸分类名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- type_name</td>
+<td style="text-align: left">string</td>
+<td>类型分类名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- ability_name</td>
+<td style="text-align: left">string</td>
+<td>能力分类名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- goods_images</td>
+<td style="text-align: left">array</td>
+<td>商品额外图片</td>
+</tr>
+<tr>
+<td style="text-align: left">- - image_id</td>
+<td style="text-align: left">number</td>
+<td>图片编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_id</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - image_url</td>
+<td style="text-align: left">string</td>
+<td>图片地址</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;goods_id&quot;: &quot;1&quot;,
+    &quot;goods_name&quot;: &quot;第一个测试商品&quot;,
+    &quot;age_id&quot;: &quot;7&quot;,
+    &quot;brand_id&quot;: &quot;14&quot;,
+    &quot;size_id&quot;: &quot;19&quot;,
+    &quot;type_id&quot;: &quot;22&quot;,
+    &quot;ability_id&quot;: &quot;34&quot;,
+    &quot;goods_price&quot;: &quot;10.00&quot;,
+    &quot;goods_number&quot;: &quot;-1&quot;,
+    &quot;goods_thumb&quot;: &quot;https:\/\/www.baidu.com\/img\/bd_logo1.png&quot;,
+    &quot;click_count&quot;: &quot;0&quot;,
+    &quot;goods_desc&quot;: &quot;我是描述&quot;,
+    &quot;on_sale&quot;: &quot;1&quot;,
+    &quot;is_star&quot;: &quot;0&quot;,
+    &quot;is_recommend&quot;: &quot;1&quot;,
+    &quot;created_at&quot;: &quot;2018-01-20 20:00:00&quot;,
+    &quot;updated_at&quot;: &quot;2018-01-20 20:00:00&quot;,
+    &quot;age_name&quot;: &quot;6-12个月&quot;,
+    &quot;brand_name&quot;: &quot;GOULA果乐&quot;,
+    &quot;size_name&quot;: &quot;中&quot;,
+    &quot;type_name&quot;: &quot;感统训练&quot;,
+    &quot;ability_name&quot;: &quot;肌肉力量&quot;,
+    &quot;goods_images&quot;: [
+      {
+        &quot;image_id&quot;: &quot;1&quot;,
+        &quot;goods_id&quot;: &quot;1&quot;,
+        &quot;image_url&quot;: &quot;https:\/\/www.baidu.com\/img\/bd_logo1.png&quot;
+      }
+    ]
+  }
+}</code></pre></div>
+
+<h2 id="toc_33"><a name="/goods/get_goods_stockouts">获取商品缺货登记列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取商品缺货登记列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/goods/get_goods_stockouts</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">goods_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /goods/get_goods_stockouts?goods_id=1 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - stockout_id</td>
+<td style="text-align: left">number</td>
+<td>缺货登记编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - user_mobile</td>
+<td style="text-align: left">string</td>
+<td>隐藏后的用户手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - created_at</td>
+<td style="text-align: left">date</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - updated_at</td>
+<td style="text-align: left">date</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;stockout_id&quot;: &quot;3&quot;,
+        &quot;created_at&quot;: &quot;2018-03-26 20:48:54&quot;,
+        &quot;updated_at&quot;: &quot;2018-03-26 20:48:54&quot;,
+        &quot;user_mobile&quot;: &quot;186*****625&quot;
+      },
+      {
+        &quot;stockout_id&quot;: &quot;2&quot;,
+        &quot;created_at&quot;: &quot;2018-03-26 20:46:12&quot;,
+        &quot;updated_at&quot;: &quot;2018-03-26 20:46:12&quot;,
+        &quot;user_mobile&quot;: &quot;186*****624&quot;
+      },
+      {
+        &quot;stockout_id&quot;: &quot;1&quot;,
+        &quot;created_at&quot;: &quot;2018-03-26 20:46:04&quot;,
+        &quot;updated_at&quot;: &quot;2018-03-26 20:46:04&quot;,
+        &quot;user_mobile&quot;: &quot;186*****623&quot;
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: 0,
+      &quot;number&quot;: 30,
+      &quot;count&quot;: 3
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_34"><a name="/order/add_carts">添加商品到购物车</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>添加商品到购物车</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/order/add_carts</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">goods_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /order/add_carts HTTP/1.1
+
+goods_id=2</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">empty</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: []
+}</code></pre></div>
+
+<h2 id="toc_35"><a name="/order/get_carts">获取购物车商品列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取购物车商品列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/order/get_carts</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /order/get_carts?start=0&amp;number=2 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td>购物车商品列表数组</td>
+</tr>
+<tr>
+<td style="text-align: left">- - carts_id</td>
+<td style="text-align: left">number</td>
+<td>购物车编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_id</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_name</td>
+<td style="text-align: left">string</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_number</td>
+<td style="text-align: left">number</td>
+<td>商品数量</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_thumb</td>
+<td style="text-align: left">string</td>
+<td>商品缩略图</td>
+</tr>
+<tr>
+<td style="text-align: left">- - is_star</td>
+<td style="text-align: left">number</td>
+<td>星标玩具，1-星标玩具，0-非星标玩具</td>
+</tr>
+<tr>
+<td style="text-align: left">- returnning_items</td>
+<td style="text-align: left">array</td>
+<td>待返还商品列表数组</td>
+</tr>
+<tr>
+<td style="text-align: left">- - order_id</td>
+<td style="text-align: left">number</td>
+<td>订单编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_id</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_name</td>
+<td style="text-align: left">string</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_number</td>
+<td style="text-align: left">number</td>
+<td>商品数量</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_thumb</td>
+<td style="text-align: left">string</td>
+<td>商品缩略图</td>
+</tr>
+<tr>
+<td style="text-align: left">- - is_star</td>
+<td style="text-align: left">number</td>
+<td>星标玩具，1-星标玩具，0-非星标玩具</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_status</td>
+<td style="text-align: left">number</td>
+<td>商品状态，1-正常租赁，2-归还中，3-已归还</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;carts_id&quot;: &quot;2&quot;, 
+        &quot;goods_id&quot;: &quot;2&quot;,
+        &quot;goods_name&quot;: &quot;第二个测试商品&quot;,
+        &quot;goods_number&quot;: &quot;1&quot;,
+        &quot;goods_thumb&quot;: &quot;&quot;,
+        &quot;is_star&quot;: &quot;1&quot;
+      },
+      {
+        &quot;carts_id&quot;: &quot;1&quot;, 
+        &quot;goods_id&quot;: &quot;1&quot;,
+        &quot;goods_name&quot;: &quot;第一个测试商品&quot;,
+        &quot;goods_number&quot;: &quot;1&quot;,
+        &quot;goods_thumb&quot;: &quot;https:\/\/www.baidu.com\/img\/bd_logo1.png&quot;,
+        &quot;is_star&quot;: &quot;0&quot;
+      }
+    ],
+    &quot;returnning_items&quot;: [
+      {
+        &quot;order_id&quot;: &quot;2&quot;,
+        &quot;goods_id&quot;: &quot;3&quot;,
+        &quot;goods_name&quot;: &quot;第三个测试商品&quot;,
+        &quot;goods_number&quot;: &quot;1&quot;,
+        &quot;goods_thumb&quot;: &quot;&quot;,
+        &quot;is_star&quot;: &quot;0&quot;,
+        &quot;goods_status&quot;: &quot;1&quot;
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: 0,
+      &quot;number&quot;: 30
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_36"><a name="/order/delete_carts">删除购物车商品</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>删除购物车商品</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/order/delete_carts</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">carts_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>购物车编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /order/delete_carts HTTP/1.1
+
+carts_id=1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">empty</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: []
+}</code></pre></div>
+
+<h2 id="toc_37"><a name="/order/add_order">提交订单</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>提交订单</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/order/add_order</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>POST </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: center">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">order_goods_id</td>
+<td style="text-align: center"><div style="width:60px;">是</div></td>
+<td style="text-align: left">string</td>
+<td>选中商品编号，格式为1,2,3</td>
+</tr>
+<tr>
+<td style="text-align: left">address_id</td>
+<td style="text-align: center">是</td>
+<td style="text-align: left">number</td>
+<td>收货地址编号</td>
+</tr>
+<tr>
+<td style="text-align: left">goods_id</td>
+<td style="text-align: center">否</td>
+<td style="text-align: left">string</td>
+<td>归还商品编号，格式为：订单编号-商品编号，例如：1-1，如果有多个商品则为：1-1,1-2</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">POST /order/add_order HTTP/1.1
+
+order_goods_id=1,2,3&amp;address_id=1&amp;goods_id=1-1,1-2</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- order_no</td>
+<td style="text-align: left">string</td>
+<td>订单号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;order_no&quot;:&quot;7495380903&quot;
+  }
+}</code></pre></div>
+
+<h2 id="toc_38"><a name="/order/get_orders">获取订单列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取订单列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/order/get_orders</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: center">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">order_status</td>
+<td style="text-align: center">否</td>
+<td style="text-align: left">string</td>
+<td>订单状态，可选值：[waitting, received, returned]</td>
+</tr>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: center">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: center">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /order/get_orders?start=0&amp;number=30 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td>订单列表数组</td>
+</tr>
+<tr>
+<td style="text-align: left">- - order_id</td>
+<td style="text-align: left">number</td>
+<td>订单编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - order_no</td>
+<td style="text-align: left">string</td>
+<td>订单号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - user_card_id</td>
+<td style="text-align: left">number</td>
+<td>用户等级卡编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - order_status</td>
+<td style="text-align: left">number</td>
+<td>订单状态，0-已下单，1-已发货，2-租借中，3-归还中，4-已归还</td>
+</tr>
+<tr>
+<td style="text-align: left">- - created_at</td>
+<td style="text-align: left">date</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - card_name</td>
+<td style="text-align: left">string</td>
+<td>用户等级卡名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_items</td>
+<td style="text-align: left">array</td>
+<td>订单端口列表数组</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - order_id</td>
+<td style="text-align: left">number</td>
+<td>订单编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - goods_id</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - goods_name</td>
+<td style="text-align: left">string</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - goods_number</td>
+<td style="text-align: left">number</td>
+<td>商品数量</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - goods_thumb</td>
+<td style="text-align: left">string</td>
+<td>商品封面地址</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - is_star</td>
+<td style="text-align: left">number</td>
+<td>是否星标玩具，0-不是星标玩具，1-星标玩具</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - goods_status</td>
+<td style="text-align: left">number</td>
+<td>商品状态，1-租借中，2-归还中，3-已归还</td>
+</tr>
+<tr>
+<td style="text-align: left">- - - goods_status_name</td>
+<td style="text-align: left">string</td>
+<td>商品状态名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - order_status_name</td>
+<td style="text-align: left">string</td>
+<td>订单状态名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;order_id&quot;: &quot;1&quot;,
+        &quot;order_no&quot;: &quot;7788997&quot;,
+        &quot;user_card_id&quot;: &quot;1&quot;,
+        &quot;order_status&quot;: &quot;4&quot;,
+        &quot;created_at&quot;: &quot;2018-01-20 20:30:00&quot;,
+        &quot;card_name&quot;: &quot;1件月卡&quot;,
+        &quot;goods_items&quot;: [
+          {
+            &quot;order_id&quot;: &quot;1&quot;,
+            &quot;goods_id&quot;: &quot;1&quot;,
+            &quot;goods_name&quot;: &quot;第一个商品&quot;,
+            &quot;goods_number&quot;: &quot;1&quot;,
+            &quot;goods_thumb&quot;: &quot;&quot;,
+            &quot;is_star&quot;: &quot;0&quot;,
+            &quot;goods_status&quot;: &quot;2&quot;,
+            &quot;goods_status_name&quot;: &quot;已归还&quot;
+          },
+          {
+            &quot;order_id&quot;: &quot;1&quot;,
+            &quot;goods_id&quot;: &quot;2&quot;,
+            &quot;goods_name&quot;: &quot;第二个商品&quot;,
+            &quot;goods_number&quot;: &quot;1&quot;,
+            &quot;goods_thumb&quot;: &quot;&quot;,
+            &quot;is_star&quot;: &quot;1&quot;,
+            &quot;goods_status&quot;: &quot;2&quot;,
+            &quot;goods_status_name&quot;: &quot;已归还&quot;
+          }
+        ],
+        &quot;order_status_name&quot;: &quot;已归还&quot;
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: 0,
+      &quot;number&quot;: 30,
+      &quot;count&quot;: 1
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_39"><a name="/order/get_order">获取订单详情</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取订单详情</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/order/get_order</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: center">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">order_id</td>
+<td style="text-align: center">是</td>
+<td style="text-align: left">number</td>
+<td>订单编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /order/get_order?order_id=1 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- order_id</td>
+<td style="text-align: left">number</td>
+<td>订单编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- order_no</td>
+<td style="text-align: left">string</td>
+<td>订单号</td>
+</tr>
+<tr>
+<td style="text-align: left">- user_id</td>
+<td style="text-align: left">number</td>
+<td>用户编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- user_card_id</td>
+<td style="text-align: left">number</td>
+<td>用户等级卡编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- order_status</td>
+<td style="text-align: left">number</td>
+<td>订单状态，0-已下单，1-已发货，2-租借中，3-归还中，4-已归还</td>
+</tr>
+<tr>
+<td style="text-align: left">- consignee</td>
+<td style="text-align: left">string</td>
+<td>收货人</td>
+</tr>
+<tr>
+<td style="text-align: left">- address</td>
+<td style="text-align: left">string</td>
+<td>收货地址</td>
+</tr>
+<tr>
+<td style="text-align: left">- mobile</td>
+<td style="text-align: left">string</td>
+<td>收货手机号</td>
+</tr>
+<tr>
+<td style="text-align: left">- created_at</td>
+<td style="text-align: left">date</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- card_name</td>
+<td style="text-align: left">string</td>
+<td>用户等级卡名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- goods_items</td>
+<td style="text-align: left">array</td>
+<td>订单端口列表数组</td>
+</tr>
+<tr>
+<td style="text-align: left">- - order_id</td>
+<td style="text-align: left">number</td>
+<td>订单编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_id</td>
+<td style="text-align: left">number</td>
+<td>商品编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_name</td>
+<td style="text-align: left">string</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_number</td>
+<td style="text-align: left">number</td>
+<td>商品数量</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_thumb</td>
+<td style="text-align: left">string</td>
+<td>商品封面地址</td>
+</tr>
+<tr>
+<td style="text-align: left">- - is_star</td>
+<td style="text-align: left">number</td>
+<td>是否星标玩具，0-不是星标玩具，1-星标玩具</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_status</td>
+<td style="text-align: left">number</td>
+<td>商品状态，1-租借中，2-已归还</td>
+</tr>
+<tr>
+<td style="text-align: left">- - goods_status_name</td>
+<td style="text-align: left">string</td>
+<td>商品状态名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- order_status_name</td>
+<td style="text-align: left">string</td>
+<td>订单状态名称</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;order_id&quot;: &quot;2&quot;,
+    &quot;order_no&quot;: &quot;7495380903&quot;,
+    &quot;user_id&quot;: &quot;1&quot;,
+    &quot;user_card_id&quot;: &quot;1&quot;,
+    &quot;order_status&quot;: &quot;0&quot;,
+    &quot;consignee&quot;: &quot;小甜甜&quot;,
+    &quot;address&quot;: &quot;中关村软件园广场4号楼&quot;,
+    &quot;mobile&quot;: &quot;18600088888&quot;,
+    &quot;created_at&quot;: &quot;2018-01-23 17:59:53&quot;,
+    &quot;card_name&quot;: &quot;1件月卡&quot;,
+    &quot;goods_items&quot;: [
+      {
+        &quot;order_id&quot;: &quot;2&quot;,
+        &quot;goods_id&quot;: &quot;3&quot;,
+        &quot;goods_name&quot;: &quot;第三个测试商品&quot;,
+        &quot;goods_number&quot;: &quot;1&quot;,
+        &quot;goods_thumb&quot;: &quot;&quot;,
+        &quot;is_star&quot;: &quot;0&quot;,
+        &quot;goods_status&quot;: &quot;1&quot;,
+        &quot;goods_status_name&quot;: &quot;租赁中&quot;
+      }
+    ],
+    &quot;order_status_name&quot;: &quot;已下单&quot;
+  }
+}</code></pre></div>
+
+<h2 id="toc_40"><a name="/order/buy_card">购买等级卡</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>购买等级卡</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/order/buy_card</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: center">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">card_id</td>
+<td style="text-align: center">是</td>
+<td style="text-align: left">number</td>
+<td>等级卡编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /order/buy_card?card_id=1 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- jsApiParametersArray</td>
+<td style="text-align: left">object</td>
+<td>参数数组</td>
+</tr>
+<tr>
+<td style="text-align: left">- jsApiParameters</td>
+<td style="text-align: left">string</td>
+<td>参数字符串</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;jsApiParametersArray&quot;: {
+      &quot;appId&quot;: &quot;wx50352eddf02dd20a&quot;,
+      &quot;nonceStr&quot;: &quot;96x3wflonm38xhm3gb0ymtbxkhl1pp48&quot;,
+      &quot;package&quot;: &quot;prepay_id=wx12205046505706c52990efd10231185708&quot;,
+      &quot;signType&quot;: &quot;MD5&quot;,
+      &quot;timeStamp&quot;: &quot;1523537446&quot;,
+      &quot;paySign&quot;: &quot;3BC43470AECD949038BD3A43BB45E303&quot;
+    },
+    &quot;jsApiParameters&quot;: &quot;{\&quot;appId\&quot;:\&quot;wx50352eddf02dd20a\&quot;,\&quot;nonceStr\&quot;:\&quot;96x3wflonm38xhm3gb0ymtbxkhl1pp48\&quot;,\&quot;package\&quot;:\&quot;prepay_id=wx12205046505706c52990efd10231185708\&quot;,\&quot;signType\&quot;:\&quot;MD5\&quot;,\&quot;timeStamp\&quot;:\&quot;1523537446\&quot;,\&quot;paySign\&quot;:\&quot;3BC43470AECD949038BD3A43BB45E303\&quot;}&quot;
+  }
+}</code></pre></div>
+
+<h2 id="toc_41"><a name="/article/get_articles">获取文章列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取文章列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/article/get_articles</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">category_no</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>文章分类编码</td>
+</tr>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /article/get_articles?category_no=green_hand HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - article_id</td>
+<td style="text-align: left">number</td>
+<td>文章编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - article_title</td>
+<td style="text-align: left">string</td>
+<td>文章标题</td>
+</tr>
+<tr>
+<td style="text-align: left">- - category_id</td>
+<td style="text-align: left">number</td>
+<td>文章分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - cover</td>
+<td style="text-align: left">string</td>
+<td>文章封面图</td>
+</tr>
+<tr>
+<td style="text-align: left">- - click_count</td>
+<td style="text-align: left">number</td>
+<td>点击次数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - sort_order</td>
+<td style="text-align: left">number</td>
+<td>排序</td>
+</tr>
+<tr>
+<td style="text-align: left">- - created_at</td>
+<td style="text-align: left">date</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - updated_at</td>
+<td style="text-align: left">date</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - category_name</td>
+<td style="text-align: left">string</td>
+<td>文章分类名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;article_id&quot;: &quot;1&quot;,
+        &quot;article_title&quot;: &quot;第一条指南&quot;,
+        &quot;category_id&quot;: &quot;1&quot;,
+        &quot;cover&quot;: &quot;&quot;,
+        &quot;click_count&quot;: &quot;0&quot;,
+        &quot;sort_order&quot;: &quot;0&quot;,
+        &quot;created_at&quot;: &quot;2018-01-20 20:30:00&quot;,
+        &quot;updated_at&quot;: &quot;2018-01-20 20:30:00&quot;,
+        &quot;category_name&quot;: &quot;新手指南&quot;
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: 0,
+      &quot;number&quot;: 30,
+      &quot;count&quot;: &quot;1&quot;
+    }
+  }
+}</code></pre></div>
+
+<h2 id="toc_42"><a name="/article/get_article">获取文章详情</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取文章详情</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/article/get_article</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">article_id</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">number</td>
+<td>文章编号</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /article/get_article?article_id=1 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- article_id</td>
+<td style="text-align: left">number</td>
+<td>文章编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- article_title</td>
+<td style="text-align: left">string</td>
+<td>文章标题</td>
+</tr>
+<tr>
+<td style="text-align: left">- category_id</td>
+<td style="text-align: left">number</td>
+<td>文章分类编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- cover</td>
+<td style="text-align: left">string</td>
+<td>文章封面图</td>
+</tr>
+<tr>
+<td style="text-align: left">- click_count</td>
+<td style="text-align: left">number</td>
+<td>点击次数</td>
+</tr>
+<tr>
+<td style="text-align: left">- sort_order</td>
+<td style="text-align: left">number</td>
+<td>排序</td>
+</tr>
+<tr>
+<td style="text-align: left">- article_content</td>
+<td style="text-align: left">string</td>
+<td>文章内容</td>
+</tr>
+<tr>
+<td style="text-align: left">- created_at</td>
+<td style="text-align: left">date</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- updated_at</td>
+<td style="text-align: left">date</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- category_name</td>
+<td style="text-align: left">string</td>
+<td>文章分类名称</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;article_id&quot;: &quot;1&quot;,
+    &quot;article_title&quot;: &quot;第一条指南&quot;,
+    &quot;category_id&quot;: &quot;1&quot;,
+    &quot;cover&quot;: &quot;&quot;,
+    &quot;click_count&quot;: &quot;0&quot;,
+    &quot;sort_order&quot;: &quot;0&quot;,
+    &quot;article_content&quot;: &quot;没有内容&quot;,
+    &quot;created_at&quot;: &quot;2018-01-20 20:30:00&quot;,
+    &quot;updated_at&quot;: &quot;2018-01-20 20:30:00&quot;,
+    &quot;category_name&quot;: &quot;新手指南&quot;
+  }
+}</code></pre></div>
+
+<h2 id="toc_43"><a name="/banner/get_banners">获取广告列表</a></h2>
+
+<p><strong>接口描述</strong> </p>
+
+<ul>
+<li>获取广告列表</li>
+</ul>
+
+<p><strong>URL</strong> </p>
+
+<ul>
+<li><code>{URL}/banner/get_banners</code></li>
+</ul>
+
+<p><strong>请求方式</strong></p>
+
+<ul>
+<li>GET </li>
+</ul>
+
+<p><strong>请求参数</strong> </p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">必选</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">position_no</td>
+<td style="text-align: left">是</td>
+<td style="text-align: left">string</td>
+<td>广告位置编码</td>
+</tr>
+<tr>
+<td style="text-align: left">start</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>起始记录值，默认值为 0</td>
+</tr>
+<tr>
+<td style="text-align: left">number</td>
+<td style="text-align: left">否</td>
+<td style="text-align: left">number</td>
+<td>记录条数，默认值为 30</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>请求示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-php">GET /banner/get_banners?position_no=index_1 HTTP/1.1</code></pre></div>
+
+<p><strong>返回参数</strong></p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left">参数名</th>
+<th style="text-align: left">类型</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td style="text-align: left">status</td>
+<td style="text-align: left">number</td>
+<td>返回状态编号，200为正常返回，其它值为错误编码</td>
+</tr>
+<tr>
+<td style="text-align: left">message</td>
+<td style="text-align: left">string</td>
+<td>返回状态信息</td>
+</tr>
+<tr>
+<td style="text-align: left">data</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- items</td>
+<td style="text-align: left">array</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - banner_id</td>
+<td style="text-align: left">number</td>
+<td>广告编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - position_id</td>
+<td style="text-align: left">number</td>
+<td>广告位编号</td>
+</tr>
+<tr>
+<td style="text-align: left">- - banner_name</td>
+<td style="text-align: left">string</td>
+<td>广告名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- - cover</td>
+<td style="text-align: left">string</td>
+<td>广告封面图</td>
+</tr>
+<tr>
+<td style="text-align: left">- - location</td>
+<td style="text-align: left">string</td>
+<td>广告资源地址</td>
+</tr>
+<tr>
+<td style="text-align: left">- - sort_order</td>
+<td style="text-align: left">number</td>
+<td>排序</td>
+</tr>
+<tr>
+<td style="text-align: left">- - status</td>
+<td style="text-align: left">number</td>
+<td>广告状态，1为启用，0为未启用</td>
+</tr>
+<tr>
+<td style="text-align: left">- - created_at</td>
+<td style="text-align: left">date</td>
+<td>创建时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - updated_at</td>
+<td style="text-align: left">date</td>
+<td>更新时间</td>
+</tr>
+<tr>
+<td style="text-align: left">- - position_name</td>
+<td style="text-align: left">string</td>
+<td>广告位名称</td>
+</tr>
+<tr>
+<td style="text-align: left">- page</td>
+<td style="text-align: left">object</td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align: left">- - start</td>
+<td style="text-align: left">number</td>
+<td>起始记录数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - number</td>
+<td style="text-align: left">number</td>
+<td>记录条数</td>
+</tr>
+<tr>
+<td style="text-align: left">- - count</td>
+<td style="text-align: left">number</td>
+<td>起始总数</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>返回示例</strong></p>
+
+<div><pre class="line-numbers"><code class="language-javascript">{
+  &quot;status&quot;: 200,
+  &quot;message&quot;: &quot;加载完成&quot;,
+  &quot;data&quot;: {
+    &quot;items&quot;: [
+      {
+        &quot;banner_id&quot;: &quot;1&quot;,
+        &quot;position_id&quot;: &quot;1&quot;,
+        &quot;banner_name&quot;: &quot;第一个广告&quot;,
+        &quot;cover&quot;: &quot;https:\/\/www.baidu.com\/img\/bd_logo1.png&quot;,
+        &quot;location&quot;: &quot;http:\/\/www.baidu.com&quot;,
+        &quot;sort_order&quot;: &quot;0&quot;,
+        &quot;status&quot;: &quot;1&quot;,
+        &quot;created_at&quot;: &quot;2018-01-20 20:30:00&quot;,
+        &quot;updated_at&quot;: &quot;2018-01-20 20:30:00&quot;,
+        &quot;position_name&quot;: &quot;首页广告&quot;
+      }
+    ],
+    &quot;page&quot;: {
+      &quot;start&quot;: 0,
+      &quot;number&quot;: 30,
+      &quot;count&quot;: &quot;2&quot;
+    }
+  }
+}</code></pre></div>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+<script type="text/javascript">
+Prism.languages.clike={comment:[{pattern:/(^|[^\\])\/\*[\w\W]*?\*\//,lookbehind:!0},{pattern:/(^|[^\\:])\/\/.*/,lookbehind:!0}],string:{pattern:/(["'])(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/,greedy:!0},"class-name":{pattern:/((?:\b(?:class|interface|extends|implements|trait|instanceof|new)\s+)|(?:catch\s+\())[a-z0-9_\.\\]+/i,lookbehind:!0,inside:{punctuation:/(\.|\\)/}},keyword:/\b(if|else|while|do|for|return|in|instanceof|function|new|try|throw|catch|finally|null|break|continue)\b/,"boolean":/\b(true|false)\b/,"function":/[a-z0-9_]+(?=\()/i,number:/\b-?(?:0x[\da-f]+|\d*\.?\d+(?:e[+-]?\d+)?)\b/i,operator:/--?|\+\+?|!=?=?|<=?|>=?|==?=?|&&?|\|\|?|\?|\*|\/|~|\^|%/,punctuation:/[{}[\];(),.:]/};
+</script>
+
+<script type="text/javascript">
+Prism.languages.javascript=Prism.languages.extend("clike",{keyword:/\b(as|async|await|break|case|catch|class|const|continue|debugger|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|null|of|package|private|protected|public|return|set|static|super|switch|this|throw|try|typeof|var|void|while|with|yield)\b/,number:/\b-?(0x[\dA-Fa-f]+|0b[01]+|0o[0-7]+|\d*\.?\d+([Ee][+-]?\d+)?|NaN|Infinity)\b/,"function":/[_$a-zA-Z\xA0-\uFFFF][_$a-zA-Z0-9\xA0-\uFFFF]*(?=\()/i}),Prism.languages.insertBefore("javascript","keyword",{regex:{pattern:/(^|[^\/])\/(?!\/)(\[.+?]|\\.|[^\/\\\r\n])+\/[gimyu]{0,5}(?=\s*($|[\r\n,.;})]))/,lookbehind:!0,greedy:!0}}),Prism.languages.insertBefore("javascript","class-name",{"template-string":{pattern:/`(?:\\\\|\\?[^\\])*?`/,greedy:!0,inside:{interpolation:{pattern:/\$\{[^}]+\}/,inside:{"interpolation-punctuation":{pattern:/^\$\{|\}$/,alias:"punctuation"},rest:Prism.languages.javascript}},string:/[\s\S]+/}}}),Prism.languages.markup&&Prism.languages.insertBefore("markup","tag",{script:{pattern:/(<script[\w\W]*?>)[\w\W]*?(?=<\/script>)/i,lookbehind:!0,inside:Prism.languages.javascript,alias:"language-javascript"}}),Prism.languages.js=Prism.languages.javascript;
+</script>
+
+<script type="text/javascript">
+Prism.languages.php=Prism.languages.extend("clike",{keyword:/\b(and|or|xor|array|as|break|case|cfunction|class|const|continue|declare|default|die|do|else|elseif|enddeclare|endfor|endforeach|endif|endswitch|endwhile|extends|for|foreach|function|include|include_once|global|if|new|return|static|switch|use|require|require_once|var|while|abstract|interface|public|implements|private|protected|parent|throw|null|echo|print|trait|namespace|final|yield|goto|instanceof|finally|try|catch)\b/i,constant:/\b[A-Z0-9_]{2,}\b/,comment:{pattern:/(^|[^\\])(?:\/\*[\w\W]*?\*\/|\/\/.*)/,lookbehind:!0}}),Prism.languages.insertBefore("php","class-name",{"shell-comment":{pattern:/(^|[^\\])#.*/,lookbehind:!0,alias:"comment"}}),Prism.languages.insertBefore("php","keyword",{delimiter:/\?>|<\?(?:php)?/i,variable:/\$\w+\b/i,"package":{pattern:/(\\|namespace\s+|use\s+)[\w\\]+/,lookbehind:!0,inside:{punctuation:/\\/}}}),Prism.languages.insertBefore("php","operator",{property:{pattern:/(->)[\w]+/,lookbehind:!0}}),Prism.languages.markup&&(Prism.hooks.add("before-highlight",function(e){"php"===e.language&&(e.tokenStack=[],e.backupCode=e.code,e.code=e.code.replace(/(?:<\?php|<\?)[\w\W]*?(?:\?>)/gi,function(a){return e.tokenStack.push(a),"{{{PHP"+e.tokenStack.length+"}}}"}))}),Prism.hooks.add("before-insert",function(e){"php"===e.language&&(e.code=e.backupCode,delete e.backupCode)}),Prism.hooks.add("after-highlight",function(e){if("php"===e.language){for(var a,n=0;a=e.tokenStack[n];n++)e.highlightedCode=e.highlightedCode.replace("{{{PHP"+(n+1)+"}}}",Prism.highlight(a,e.grammar,"php").replace(/\$/g,"$$$$"));e.element.innerHTML=e.highlightedCode}}),Prism.hooks.add("wrap",function(e){"php"===e.language&&"markup"===e.type&&(e.content=e.content.replace(/(\{\{\{PHP[0-9]+\}\}\})/g,'<span class="token php">$1</span>'))}),Prism.languages.insertBefore("php","comment",{markup:{pattern:/<[^?]\/?(.*?)>/,inside:Prism.languages.markup},php:/\{\{\{PHP[0-9]+\}\}\}/}));
+</script>
+
+<script type="text/javascript">
+Prism.languages.insertBefore("php","variable",{"this":/\$this\b/,global:/\$(?:_(?:SERVER|GET|POST|FILES|REQUEST|SESSION|ENV|COOKIE)|GLOBALS|HTTP_RAW_POST_DATA|argc|argv|php_errormsg|http_response_header)/,scope:{pattern:/\b[\w\\]+::/,inside:{keyword:/(static|self|parent)/,punctuation:/(::|\\)/}}});
+</script>
+
+<script type="text/javascript">
+!function(){"undefined"!=typeof self&&self.Prism&&self.document&&Prism.hooks.add("complete",function(e){if(e.code){var t=e.element.parentNode,s=/\s*\bline-numbers\b\s*/;if(t&&/pre/i.test(t.nodeName)&&(s.test(t.className)||s.test(e.element.className))&&!e.element.querySelector(".line-numbers-rows")){s.test(e.element.className)&&(e.element.className=e.element.className.replace(s,"")),s.test(t.className)||(t.className+=" line-numbers");var n,a=e.code.match(/\n(?!$)/g),l=a?a.length+1:1,m=new Array(l+1);m=m.join("<span></span>"),n=document.createElement("span"),n.className="line-numbers-rows",n.innerHTML=m,t.hasAttribute("data-start")&&(t.style.counterReset="linenumber "+(parseInt(t.getAttribute("data-start"),10)-1)),e.element.appendChild(n)}}})}();
+</script>
+
+<script type="text/x-mathjax-config">
+(function () {
+
+MathJax.Hub.Config({
+	'showProcessingMessages': false,
+	'messageStyle': 'none'
+});
+
+if (typeof MathJaxListener !== 'undefined') {
+	MathJax.Hub.Register.StartupHook('End', function () {
+		MathJaxListener.invokeCallbackForKey_('End');
+	});
+}
+
+})();
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+</body>
+
+</html>
