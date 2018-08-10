@@ -1,0 +1,16 @@
+{
+	"description": "A WePY project",
+	"setting": {
+		"urlCheck": true,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"appid": "wx83c89e6eefb95e58",
+	"projectname": "sheep",
+	"miniprogramRoot": "./dist",
+	"libVersion": "2.2.2",
+	"condition": {}
+}

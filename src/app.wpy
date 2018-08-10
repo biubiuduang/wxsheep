@@ -1,0 +1,180 @@
+<style lang="less">
+  @import "./weui.wxss";
+
+  page {
+    background-color: #F8F8F8;
+    font-size: 16px;
+    font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+  }
+
+  .page__hd {
+    padding: 40px;
+  }
+
+  .page__bd {
+    padding-bottom: 40px;
+  }
+
+  .page__bd_spacing {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .page__ft {
+    padding-bottom: 10px;
+    text-align: center;
+  }
+
+  .page__title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .page__desc {
+    margin-top: 5px;
+    color: #888888;
+    text-align: left;
+    font-size: 14px;
+  }
+  .container {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .wx-col-1, .wx-col-2, .wx-col-3, .wx-col-4, .wx-col-5, .wx-col-6, .wx-col-7, .wx-col-8, .wx-col-9, .wx-col-10, .wx-col-11, .wx-col-12 {
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+    box-sizing: border-box;
+  }
+  .wx-col-12 {
+    width: 100%;
+  }
+  .wx-col-11 {
+    width: 91.66666667%;
+  }
+  .wx-col-10 {
+    width: 83.33333333%;
+  }
+  .wx-col-9 {
+    width: 75%;
+  }
+  .wx-col-8 {
+    width: 66.66666667%;
+  }
+  .wx-col-7 {
+    width: 58.33333333%;
+  }
+  .wx-col-6 {
+    width: 50%;
+  }
+  .wx-col-5 {
+    width: 41.66666667%;
+  }
+  .wx-col-4 {
+    width: 33.33333333%;
+  }
+  .wx-col-3 {
+    width: 25%;
+  }
+  .wx-col-2 {
+    width: 16.66666667%;
+  }
+  .wx-col-1 {
+    width: 8.33333333%;
+  }
+</style>
+
+<script>
+  import wepy from 'wepy'
+  import 'wepy-async-function'
+
+  import {setStore} from 'wepy-redux'
+  import configStore from './store'
+
+  const store = configStore()
+  setStore(store)
+
+  export default class extends wepy.app {
+    config = {
+      pages: [
+        'pages/index',
+        'pages/other'
+      ],
+      window: {
+        backgroundTextStyle: 'light',
+        navigationBarBackgroundColor: '#fff',
+        navigationBarTitleText: 'WeChat',
+        navigationBarTextStyle: 'black'
+      },
+      tabBar: {
+        color: '#979797',
+        selectedColor: '#2396ff',
+        backgroundColor: '#fafafa',
+        list: [{
+          pagePath: 'pages/index',
+          text: '首页',
+          iconPath: 'assets/images/icon-1.png',
+          selectedIconPath: 'assets/images/icon-1-active.png'
+        }, {
+          pagePath: 'pages/other',
+          text: '全部玩具',
+          iconPath: 'assets/images/icon-2.png',
+          selectedIconPath: 'assets/images/icon-2-active.png'
+        }, {
+          pagePath: 'pages/other',
+          text: '购物车',
+          iconPath: 'assets/images/icon-3.png',
+          selectedIconPath: 'assets/images/icon-3-active.png'
+        }, {
+          pagePath: 'pages/other',
+          text: '我的',
+          iconPath: 'assets/images/icon-4.png',
+          selectedIconPath: 'assets/images/icon-4-active.png'
+        }]
+      }
+    }
+
+    globalData = {
+      userInfo: null,
+      url: 'https://xwwl.ottcn.com/service'
+    }
+
+    constructor() {
+      super()
+      this.use('requestfix')
+    }
+
+    onLaunch() {
+      this.testAsync()
+    }
+
+    sleep(s) {
+      return new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve('promise resolved')
+        }, s * 1000)
+      })
+    }
+
+    async testAsync() {
+      const data = await this.sleep(3)
+      console.log(data)
+    }
+
+    getUserInfo(cb) {
+      const that = this
+      if (this.globalData.userInfo) {
+        return this.globalData.userInfo
+      }
+      wepy.getUserInfo({
+        success(res) {
+          that.globalData.userInfo = res.userInfo
+          cb && cb(res.userInfo)
+        }
+      })
+    }
+  }
+</script>

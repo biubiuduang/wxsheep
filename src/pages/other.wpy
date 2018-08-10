@@ -1,0 +1,33 @@
+<style lang="less">
+
+</style>
+<template>
+<view class="page">
+  <navigator url="/pages/index?userId=hahahhaah">index</navigator>
+</view>
+</template>
+<script>
+  import wepy from 'wepy'
+
+  export default class extends wepy.page {
+    config = {
+      navigationBarTitleText: '我是title'
+    }
+    components = {}
+
+    mixins = []
+
+    data = {}
+
+    computed = {}
+
+    methods = {
+
+    }
+
+    events = {}
+
+    onLoad(options) {
+    }
+  }
+</script>

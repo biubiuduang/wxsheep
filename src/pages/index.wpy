@@ -1,0 +1,208 @@
+<style lang="less">
+  .button-sp-area{
+    margin: 0 auto;
+    padding-top: 15px;
+    width: 60%;
+  }
+  .mini-btn{
+    margin-right: 5px;
+  }
+  .container{
+    width: 100%;
+  }
+  .page-header{
+    width: 100%;
+    overflow: hidden;
+    padding: 40px 0;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #d3454f;
+    text-align: center;
+    .weui-search-bar{
+      background-color: #d3454f;
+      border-top: 1px solid #d3454f;
+      border-bottom: 1px solid #d3454f;
+      margin-bottom: 10px;
+    }
+    .wx-search-input{
+      text-align: left;
+    }
+    .list-box{
+      width: 40px;
+      height: 40px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      border-radius: 5px;
+      .list-img{
+        width: 100%;
+      }
+    }
+    p{
+      margin: 0 auto;
+      color:#ffffff;
+      font-size: 12px;
+      width: 100%;
+    }
+  }
+</style>
+<template>
+  <view class="page">
+    <view class="container page-header">
+      <view class="weui-search-bar">
+        <view class="weui-search-bar__form">
+          <view class="weui-search-bar__box">
+            <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
+            <input type="text" class="weui-search-bar__input wx-search-input" placeholder="搜索" value="{{inputVal}}" focus="{{inputShowed}}" @input="inputTyping" />
+            <view class="weui-icon-clear" wx:if="{{inputVal.length > 0}}" @tap="clearInput">
+              <icon type="clear" size="14"></icon>
+            </view>
+          </view>
+          <label class="weui-search-bar__label" hidden="{{inputShowed}}" @tap="showInput">
+            <icon class="weui-icon-search" type="search" size="14"></icon>
+            <view class="weui-search-bar__text">搜索</view>
+          </label>
+        </view>
+        <view class="weui-search-bar__cancel-btn" hidden="{{!inputShowed}}" @tap="hideInput">取消</view>
+      </view>
+      <view class="nav-container">
+        <navigator open-type="switchTab" url="/pages/other" hover-class="navigator-hover" class="wx-col-3">
+          <view class="list-box">
+            <image  class="list-img" src="/assets/images/1.png" background-size="100%"></image>
+          </view>
+          <p>成为会员</p>
+        </navigator>
+        <navigator open-type="switchTab" url="/pages/other" hover-class="navigator-hover" class="wx-col-3">
+          <view class="list-box">
+            <image class="list-img" src="/assets/images/2.png" background-size="100%"></image>
+          </view>
+          <p>派对服务</p>
+        </navigator>
+        <navigator open-type="switchTab" url="/pages/other" hover-class="navigator-hover" class="wx-col-3">
+          <view class="list-box">
+            <image class="list-img" src="/assets/images/3.png" background-size="100%"></image>
+          </view>
+          <p>玩具回收</p>
+        </navigator>
+        <navigator open-type="switchTab" url="/pages/other" hover-class="navigator-hover" class="wx-col-3">
+          <view class="list-box">
+            <image class="list-img" src="/assets/images/4.png" background-size="100%"></image>
+          </view>
+          <p>联盟商户</p>
+        </navigator>
+      </view>
+    </view>
+    <view class="page__bd page__bd_spacing">
+
+    </view>
+  </view>
+</template>
+
+<script>
+  import wepy from 'wepy'
+  import { connect } from 'wepy-redux'
+  import moduleA from 'module-a' // aliasFields ignore module example
+
+  console.log('moduleA ignored: ', moduleA) // => moduleA ignored: {}
+
+  @connect({
+    num (state) {
+      return state.counter.num
+    },
+    asyncNum (state) {
+      return state.counter.asyncNum
+    },
+    sumNum (state) {
+      return state.counter.num + state.counter.asyncNum
+    }
+  })
+
+  export default class Index extends wepy.page {
+    config = {
+      navigationBarTitleText: 'sheep',
+      navigationBarBackgroundColor: '#d3454f',
+      navigationBarTextStyle: 'white'
+    }
+    components = {}
+
+    mixins = []
+
+    data = {
+      inputVal: '',
+      inputShowed: false,
+      userInfo: {
+        nickName: '加载中...',
+        avatarUrl: ''
+      },
+      info: ''
+    }
+
+    computed = {}
+
+    methods = {
+      getDataList: function(url) {
+        wepy.request({
+          url: url + '/rank/info?zone_id=1&grade_id=0&offset=1&limit=20&team_name=',
+          method: 'GET',
+          success: function (res) {
+            console.log(res)
+          }
+        })
+      },
+      onGotUserInfo: function(e) {
+        console.log(e)
+        console.log(e.detail.errMsg)
+        console.log(e.detail.userInfo)
+        console.log(e.detail.rawData)
+      },
+      showInput: function () {
+        this.inputShowed = true
+      },
+      hideInput: function () {
+        this.inputVal = ''
+        this.inputShowed = false
+      },
+      clearInput: function () {
+        this.inputVal = ''
+      },
+      inputTyping: function (e) {
+        this.inputVal = e.detail.value
+      }
+    }
+
+    events = {}
+
+    onLoad(options) {
+      // that.methods.request()
+      var that = this
+      console.log(options.userId)
+      this.info = that.$parent.globalData.url
+      this.methods.getDataList(this.info)
+      let self = this
+
+      this.$parent.getUserInfo(function (userInfo) {
+        if (userInfo) {
+          self.userInfo = userInfo
+        }
+        self.$apply()
+      })
+      wepy.login({
+        success: function(res) {
+          console.log(res)
+          wepy.request({
+            url: that.info + '/weiChat/use_code',
+            data: {
+              code: res.code,
+              type: 0
+            },
+            header: {
+              'content-type': 'application/json'
+            },
+            success: function(res) {
+              console.log(res)
+            }
+          })
+        }
+      })
+    }
+  }
+</script>
